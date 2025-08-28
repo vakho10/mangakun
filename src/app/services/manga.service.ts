@@ -2,19 +2,19 @@ import {Injectable} from '@angular/core';
 import {map, Observable} from 'rxjs';
 import {Chapter, Manga} from '../types/all-types';
 import {HttpClient} from '@angular/common/http';
+import {environment} from '../../environments/environment';
 
 @Injectable({providedIn: 'root'})
 export class MangaService {
 
   // For now (for demo) we'll use a static JSON file
-  private readonly apiUrl = '/db.json';
-  private readonly mangas: Manga[] = [];
+  private readonly dbPath = '/db.json';
 
   constructor(private http: HttpClient) {
   }
 
   getMangas(): Observable<Manga[]> {
-    return this.http.get<Manga[]>(this.apiUrl);
+    return this.http.get<Manga[]>(`${environment.apiUrl}${this.dbPath}`);
   }
 
   getMangaById(id: string): Observable<Manga | undefined> {
