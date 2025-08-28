@@ -1,26 +1,26 @@
-import Phaser from 'phaser';
+import {GameObjects, Geom, Input, Scene, Sound, Time, Types} from 'phaser';
 import {Chapter, Panel, PointTuple, SoundEvent} from '../../app/types/all-types';
 import {EventBus} from '../EventBus';
 
-export class ChapterScene extends Phaser.Scene {
+export class ChapterScene extends Scene {
   private chapterData!: Chapter;
-  private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
+  private cursors!: Types.Input.Keyboard.CursorKeys;
   private currentPanelIndex = -1;
 
   private maxPageWidth = 0;
   private totalPanelAmount = 0;
 
-  private pageImages: Phaser.GameObjects.Image[] = [];
+  private pageImages: GameObjects.Image[] = [];
   private pageOverlays: {
-    graphics: Phaser.GameObjects.Graphics,
+    graphics: GameObjects.Graphics,
     coordinates: PointTuple[];
     center: PointTuple;
   }[] = [];
 
   // Sound system
-  private bgmMap: Map<string, Phaser.Sound.BaseSound> = new Map();
-  private sfxMap: Map<string, Phaser.Sound.BaseSound> = new Map();
-  private ttsMap: Map<string, Phaser.Sound.BaseSound> = new Map();
+  private bgmMap: Map<string, Sound.BaseSound> = new Map();
+  private sfxMap: Map<string, Sound.BaseSound> = new Map();
+  private ttsMap: Map<string, Sound.BaseSound> = new Map();
 
   private activeBgmKeys: Set<string> = new Set();
   private activeSfxKeys: Set<string> = new Set();
@@ -35,7 +35,7 @@ export class ChapterScene extends Phaser.Scene {
   };
 
   // Add a property to track pending delayed calls
-  private pendingDelayedCalls: Phaser.Time.TimerEvent[] = [];
+  private pendingDelayedCalls: Time.TimerEvent[] = [];
 
   private panelBgmMap: Map<number, SoundEvent[]> = new Map();
 
@@ -72,7 +72,7 @@ export class ChapterScene extends Phaser.Scene {
 
     // Stack pages vertically and center horizontally
     let verticalOffset = 0;
-    let prevPageImage: Phaser.GameObjects.Image | undefined;
+    let prevPageImage: GameObjects.Image | undefined;
     this.pageImages.forEach(img => {
       verticalOffset += img.displayHeight / 2;
       if (prevPageImage) {
@@ -98,7 +98,7 @@ export class ChapterScene extends Phaser.Scene {
     cam.centerOnX(this.maxPageWidth / 2);
 
     // Click navigation
-    this.input.on('pointerup', (pointer: Phaser.Input.Pointer) => {
+    this.input.on('pointerup', (pointer: Input.Pointer) => {
       if (pointer.leftButtonReleased()) this.nextPanel();
       else if (pointer.rightButtonReleased()) this.previousPanel();
     });
@@ -106,7 +106,7 @@ export class ChapterScene extends Phaser.Scene {
     EventBus.emit('chapter-loaded'); // Notify angular components that the chapter is loaded
   }
 
-  makeOverlayFor(img: Phaser.GameObjects.Image, panel: Panel) {
+  makeOverlayFor(img: GameObjects.Image, panel: Panel) {
     const graphics = this.add.graphics();
 
     graphics.fillStyle(0x000000); // Back overlay
@@ -132,7 +132,7 @@ export class ChapterScene extends Phaser.Scene {
       panel.center = [img.x + panel.center[0] - img.width / 2, img.y + panel.center[1] - img.height / 2];
     } else {
       // Compute center using formula
-      const centroid = Phaser.Geom.Point.GetCentroid(coords.map(([x, y]) => ({x, y})));
+      const centroid = Geom.Point.GetCentroid(coords.map(([x, y]) => ({x, y})));
       panel.center = [img.x + centroid.x, img.y + centroid.y];
     }
 
@@ -250,7 +250,7 @@ export class ChapterScene extends Phaser.Scene {
     };
   }
 
-  private fadeOutAndStop(sound: Phaser.Sound.BaseSound, duration: number) {
+  private fadeOutAndStop(sound: Sound.BaseSound, duration: number) {
     this.tweens.add({
       targets: sound,
       volume: 0,

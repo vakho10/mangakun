@@ -1,10 +1,10 @@
 import {PreloaderScene} from './scenes/PreloaderScene';
-import Phaser from "phaser";
+import {Game, Scale, Types} from "phaser";
 import {ChapterScene} from './scenes/ChapterScene';
 import {Chapter} from '../app/types/all-types';
 
 const StartGame = (parent: string, chapterData: Chapter) => {
-  const config: Phaser.Types.Core.GameConfig = {
+  const config: Types.Core.GameConfig = {
     type: Phaser.AUTO,
     title: 'MangaFlow',
     parent: parent,
@@ -13,12 +13,12 @@ const StartGame = (parent: string, chapterData: Chapter) => {
     width: Math.floor(window.innerWidth),
     height: Math.floor(window.innerHeight),
     scale: {
-      mode: Phaser.Scale.NONE,
-      autoCenter: Phaser.Scale.NO_CENTER,
+      mode: Scale.NONE,
+      autoCenter: Scale.NO_CENTER,
     },
     scene: [new PreloaderScene(chapterData), ChapterScene]
   }
-  return new Phaser.Game(config);
+  return new Game(config);
 }
 
 export default StartGame;

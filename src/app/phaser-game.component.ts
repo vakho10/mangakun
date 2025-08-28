@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, Input, OnDestroy, ViewChild} from "@angular/core";
-import Phaser from "phaser";
+import {Game} from "phaser";
 import StartGame from "../game/main";
 import {Chapter} from './types/all-types';
 import {EventBus} from '../game/EventBus';
@@ -10,7 +10,7 @@ import {EventBus} from '../game/EventBus';
   standalone: true,
 })
 export class PhaserGame implements AfterViewInit, OnDestroy {
-  game!: Phaser.Game;
+  game!: Game;
 
   @Input() chapterData!: Chapter;
   @ViewChild('container') container!: HTMLElement;

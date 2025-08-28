@@ -14,4 +14,5 @@ import {NgOptimizedImage} from '@angular/common';
 export class NavbarComponent {
   appName = environment.appName;
   appVersion = environment.version;
+  protected readonly environment = environment;
 }
