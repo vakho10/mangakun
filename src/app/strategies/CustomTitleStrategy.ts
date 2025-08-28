@@ -1,0 +1,22 @@
+import {Injectable} from '@angular/core';
+import {RouterStateSnapshot, TitleStrategy} from '@angular/router';
+import {Title} from '@angular/platform-browser';
+
+@Injectable({providedIn: 'root'})
+export class CustomTitleStrategy extends TitleStrategy {
+
+  constructor(private readonly title: Title) {
+    super();
+  }
+
+  override updateTitle(routerState: RouterStateSnapshot) {
+    const title = this.buildTitle(routerState);
+    if (title !== undefined) {
+      // Our custom title pattern
+      this.title.setTitle(`${title} - MangaFlow`);
+    } else {
+      // Fallback if no route title is provided
+      this.title.setTitle('MangaFlow - Your Ultimate Manga Reader');
+    }
+  }
+}

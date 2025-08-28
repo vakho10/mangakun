@@ -1,0 +1,1465 @@
+[
+  {
+    "available": true,
+    "id": "all-you-need-is-kill",
+    "title": "All You Need Is Kill",
+    "author": "Hiroshi Sakurazaka, Ryosuke Takeuchi",
+    "coverUrl": "assets/mangas/all-you-need-is-kill/cover.jpg",
+    "description": "A soldier relives the same deadly battle against alien invaders, learning and improving with each loop.",
+    "lastUpdated": "2025-08-26T17:54:00Z",
+    "tags": [
+      "Sci-Fi",
+      "Seinen",
+      "Time Loop"
+    ],
+    "rating": 4.6,
+    "volumes": [
+      {
+        "number": 1,
+        "title": "Volume 1",
+        "coverUrl": "assets/mangas/all-you-need-is-kill/volume-1/cover.jpg",
+        "chapters": [
+          {
+            "number": 1,
+            "title": "Chapter 1",
+            "pages": [
+              {
+                "pageNumber": 1,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-1.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0], [784, 0], [784, 482], [679, 482], [679, 552], [82, 552], [82, 482], [0, 482]
+                    ],
+                    "center": [392, 274],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/Modern_Battlefield-Mike_Koenig-1530825219.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "sfx": [
+                        {
+                          "src": "assets/audios/Slow Breathing-SoundBible.com-603073868.mp3",
+                          "loop": true,
+                          "volume": 0.45,
+                          "fadeIn": 500
+                        }
+                      ],
+                      "tts": [
+                        {
+                          "src": "assets/audios/page1_frame1.mp3",
+                          "restart": true,
+                          "delay": 500
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "coordinates": [
+                      [0, 482], [82, 482], [82, 552], [679, 552], [679, 482], [784, 482], [784, 1145], [0, 1145]
+                    ],
+                    "center": [392, 776],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/Modern_Battlefield-Mike_Koenig-1530825219.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "sfx": [
+                        {
+                          "src": "assets/audios/Slow Breathing-SoundBible.com-603073868.mp3",
+                          "loop": true,
+                          "volume": 0.45,
+                          "fadeIn": 500
+                        }
+                      ],
+                      "tts": [
+                        {
+                          "src": "assets/audios/page1_frame2.mp3",
+                          "restart": true,
+                          "delay": 500
+                        },
+                        {
+                          "src": "assets/audios/page1_frame3.mp3",
+                          "restart": true,
+                          "delay": 3750
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "pageNumber": 2,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-2.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1568, 0],
+                      [1568, 1145],
+                      [0, 1145]
+                    ],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/Modern_Battlefield-Mike_Koenig-1530825219.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "sfx": [
+                        {
+                          "src": "assets/audios/Slow Breathing-SoundBible.com-603073868.mp3",
+                          "loop": true,
+                          "volume": 0.45,
+                          "fadeIn": 500
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "pageNumber": 3,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-3.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [1050, 49],
+                      [1500, 49],
+                      [1500, 600],
+                      [1050, 600]
+                    ]
+                  },
+                  {
+                    "coordinates": [
+                      [167, 49],
+                      [1027, 49],
+                      [1027, 603],
+                      [164, 603]
+                    ]
+                  },
+                  {
+                    "coordinates": [
+                      [0, 672],
+                      [1500, 672],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 4,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-4.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [90, 0],
+                      [1500, 0],
+                      [1500, 1011],
+                      [90, 1011]
+                    ]
+                  },
+                  {
+                    "coordinates": [
+                      [90, 1077],
+                      [1359, 1077],
+                      [1359, 1364],
+                      [90, 1364]
+                    ]
+                  },
+                  {
+                    "coordinates": [
+                      [743, 1430],
+                      [1500, 1430],
+                      [1500, 2108],
+                      [743, 2108]
+                    ]
+                  },
+                  {
+                    "coordinates": [
+                      [90, 1433],
+                      [728, 1433],
+                      [728, 2250],
+                      [90, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 5,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-5.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [822, 59],
+                      [1500, 59],
+                      [1500, 1051],
+                      [822, 1051]
+                    ]
+                  },
+                  {
+                    "coordinates": [
+                      [0, 56],
+                      [799, 56],
+                      [799, 616],
+                      [0, 616]
+                    ]
+                  },
+                  {
+                    "coordinates": [
+                      [124, 679],
+                      [799, 679],
+                      [799, 1051],
+                      [124, 1051]
+                    ]
+                  },
+                  {
+                    "coordinates": [
+                      [1145, 1117],
+                      [1500, 1117],
+                      [1500, 2036],
+                      [1145, 2036]
+                    ]
+                  },
+                  {
+                    "coordinates": [
+                      [0, 1117],
+                      [1112, 1117],
+                      [1112, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 6,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-6.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [88, 0],
+                      [1356, 0],
+                      [1356, 632],
+                      [88, 632]
+                    ]
+                  },
+                  {
+                    "coordinates": [
+                      [93, 692],
+                      [1500, 692],
+                      [1500, 1654],
+                      [93, 1654]
+                    ]
+                  },
+                  {
+                    "coordinates": [
+                      [523, 1713],
+                      [1353, 1713],
+                      [1353, 2135],
+                      [523, 2135]
+                    ]
+                  },
+                  {
+                    "coordinates": [
+                      [88, 1713],
+                      [503, 1713],
+                      [503, 2135],
+                      [88, 2135]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 7,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-7.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [691, 0],
+                      [1435, 0],
+                      [1435, 593],
+                      [691, 593]
+                    ]
+                  },
+                  {
+                    "coordinates": [
+                      [671, 0],
+                      [671, 593],
+                      [170, 593],
+                      [170, 0]
+                    ]
+                  },
+                  {
+                    "coordinates": [
+                      [164, 646],
+                      [1435, 646],
+                      [1435, 972],
+                      [164, 972]
+                    ]
+                  },
+                  {
+                    "coordinates": [
+                      [0, 972],
+                      [1500, 972],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 8,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-8.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 9,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-9.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 10,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-10.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 11,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-11.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 12,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-12.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 13,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-13.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 14,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-14.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 15,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-15.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 16,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-16.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 17,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-17.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 18,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-18.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 19,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-19.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 20,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-20.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 21,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-21.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 22,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-22.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 23,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-23.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 24,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-24.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 25,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-25.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 26,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-26.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 27,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-27.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 28,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-28.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 29,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-29.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 30,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-30.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 31,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-31.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 32,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-32.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 33,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-33.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 34,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-34.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 35,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-35.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 36,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-36.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 37,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-37.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 38,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-38.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 39,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-39.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 40,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-40.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 41,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-41.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 42,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-42.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 43,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-43.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 44,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-44.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 45,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-45.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 46,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-46.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 47,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-47.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 48,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-48.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 49,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-49.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 50,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-50.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 51,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-51.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 52,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-52.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 53,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-53.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 54,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-54.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 55,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-55.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 56,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-56.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 57,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-57.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 58,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-58.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 59,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-59.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 60,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-60.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 61,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-61.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 62,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-62.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 63,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-63.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 64,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-64.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              },
+              {
+                "pageNumber": 65,
+                "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-65.jpg",
+                "panels": [
+                  {
+                    "coordinates": [
+                      [0, 0],
+                      [1500, 0],
+                      [1500, 2250],
+                      [0, 2250]
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Volume 2",
+        "coverUrl": "assets/mangas/all-you-need-is-kill/volume-2/cover.jpg"
+      }
+    ]
+  },
+  {
+    "available": false,
+    "id": "death-note",
+    "title": "Death Note",
+    "author": "Tsugumi Ohba, Takeshi Obata",
+    "coverUrl": "assets/mangas/death-note/volume-1/cover.jpg",
+    "description": "A high school student discovers a mysterious notebook that allows him to kill anyone by writing their name, leading to a cat-and-mouse battle with a genius detective.",
+    "lastUpdated": "2023-08-01T00:00:00.000Z",
+    "tags": [
+      "psychological",
+      "thriller",
+      "supernatural",
+      "mystery"
+    ],
+    "rating": 4.9,
+    "volumes": []
+  },
+  {
+    "available": false,
+    "id": "jojo-stardust-crusaders",
+    "title": "JoJo's Bizarre Adventure Part 3: Stardust Crusaders",
+    "author": "Hirohiko Araki",
+    "coverUrl": "assets/mangas/jojo-stardust-crusaders/volume-1/cover.jpg",
+    "description": "Jotaro Kujo and his allies embark on a journey across the world to defeat the vampire Dio, encountering bizarre Stand battles along the way.",
+    "lastUpdated": "2023-08-10T00:00:00.000Z",
+    "tags": [
+      "action",
+      "supernatural",
+      "adventure",
+      "shounen"
+    ],
+    "rating": 4.7,
+    "volumes": []
+  },
+  {
+    "available": false,
+    "id": "attack-on-titan",
+    "title": "Attack on Titan",
+    "author": "Hajime Isayama",
+    "coverUrl": "assets/mangas/attack-on-titan/volume-1/cover.jpg",
+    "description": "In a world besieged by man-eating Titans, humanity fights for survival behind massive walls as a young soldier uncovers the truth about the Titans and the world.",
+    "lastUpdated": "2023-07-20T00:00:00.000Z",
+    "tags": [
+      "action",
+      "dark fantasy",
+      "drama",
+      "shounen"
+    ],
+    "rating": 4.8,
+    "volumes": []
+  },
+  {
+    "available": false,
+    "id": "one-piece",
+    "title": "One Piece",
+    "author": "Eiichiro Oda",
+    "coverUrl": "assets/mangas/one-piece/volume-1/cover.jpg",
+    "description": "Monkey D. Luffy and his pirate crew sail across the seas in search of the legendary treasure known as the One Piece.",
+    "lastUpdated": "2023-08-15T00:00:00.000Z",
+    "tags": [
+      "adventure",
+      "action",
+      "comedy",
+      "fantasy",
+      "shounen"
+    ],
+    "rating": 4.9,
+    "volumes": []
+  },
+  {
+    "available": false,
+    "id": "naruto",
+    "title": "Naruto",
+    "author": "Masashi Kishimoto",
+    "coverUrl": "assets/mangas/naruto/volume-1/cover.jpg",
+    "description": "A young ninja strives to become the Hokage of his village, overcoming challenges and fighting powerful enemies along the way.",
+    "lastUpdated": "2023-07-25T00:00:00.000Z",
+    "tags": [
+      "action",
+      "adventure",
+      "martial arts",
+      "shounen"
+    ],
+    "rating": 4.6,
+    "volumes": []
+  },
+  {
+    "available": false,
+    "id": "fullmetal-alchemist",
+    "title": "Fullmetal Alchemist",
+    "author": "Hiromu Arakawa",
+    "coverUrl": "assets/mangas/fullmetal-alchemist/volume-1/cover.jpg",
+    "description": "Two brothers use alchemy in their quest to restore their bodies after a failed alchemical ritual, uncovering deep conspiracies in their world.",
+    "lastUpdated": "2023-08-05T00:00:00.000Z",
+    "tags": [
+      "adventure",
+      "dark fantasy",
+      "drama",
+      "steampunk"
+    ],
+    "rating": 4.8,
+    "volumes": []
+  },
+  {
+    "available": false,
+    "id": "berserk",
+    "title": "Berserk",
+    "author": "Kentaro Miura",
+    "coverUrl": "assets/mangas/berserk/volume-1/cover.jpg",
+    "description": "Guts, a lone mercenary, battles through a dark medieval world filled with demons and political intrigue, driven by vengeance against his former friend Griffith.",
+    "lastUpdated": "2023-07-30T00:00:00.000Z",
+    "tags": [
+      "dark fantasy",
+      "seinen",
+      "action",
+      "horror"
+    ],
+    "rating": 5.0,
+    "volumes": []
+  },
+  {
+    "available": false,
+    "id": "hunter-x-hunter",
+    "title": "Hunter x Hunter",
+    "author": "Yoshihiro Togashi",
+    "coverUrl": "assets/mangas/hunter-x-hunter/volume-1/cover.jpg",
+    "description": "Gon Freecss becomes a Hunter to search for his missing father, encountering friends, enemies, and deadly challenges.",
+    "lastUpdated": "2023-08-08T00:00:00.000Z",
+    "tags": [
+      "adventure",
+      "fantasy",
+      "action",
+      "shounen"
+    ],
+    "rating": 4.7,
+    "volumes": []
+  },
+  {
+    "available": false,
+    "id": "demon-slayer",
+    "title": "Demon Slayer: Kimetsu no Yaiba",
+    "author": "Koyoharu Gotouge",
+    "coverUrl": "assets/mangas/demon-slayer/volume-1/cover.jpg",
+    "description": "Tanjiro Kamado becomes a demon slayer after his family is slaughtered and his sister is turned into a demon, seeking to find a cure.",
+    "lastUpdated": "2023-08-12T00:00:00.000Z",
+    "tags": [
+      "action",
+      "dark fantasy",
+      "adventure",
+      "shounen"
+    ],
+    "rating": 4.6,
+    "volumes": []
+  },
+  {
+    "available": false,
+    "id": "chainsaw-man",
+    "title": "Chainsaw Man",
+    "author": "Tatsuki Fujimoto",
+    "coverUrl": "assets/mangas/chainsaw-man/volume-1/cover.jpg",
+    "description": "Denji, a poor young man, merges with his pet devil Pochita to become Chainsaw Man, fighting against devils in a brutal, surreal world.",
+    "lastUpdated": "2023-08-14T00:00:00.000Z",
+    "tags": [
+      "dark fantasy",
+      "horror",
+      "supernatural",
+      "shounen"
+    ],
+    "rating": 4.5,
+    "volumes": []
+  },
+  {
+    "available": false,
+    "id": "bleach",
+    "title": "Bleach",
+    "author": "Tite Kubo",
+    "coverUrl": "assets/mangas/bleach/volume-1/cover.jpg",
+    "description": "Ichigo Kurosaki gains the powers of a Soul Reaper, protecting humans from evil spirits and guiding souls to the afterlife.",
+    "lastUpdated": "2023-07-18T00:00:00.000Z",
+    "tags": [
+      "action",
+      "supernatural",
+      "fantasy",
+      "shounen"
+    ],
+    "rating": 4.4,
+    "volumes": []
+  },
+  {
+    "available": false,
+    "id": "dragon-ball",
+    "title": "Dragon Ball",
+    "author": "Akira Toriyama",
+    "coverUrl": "assets/mangas/dragon-ball/volume-1/cover.jpg",
+    "description": "Son Goku embarks on adventures to find the mystical Dragon Balls, facing martial arts tournaments and powerful enemies.",
+    "lastUpdated": "2023-07-22T00:00:00.000Z",
+    "tags": [
+      "action",
+      "adventure",
+      "martial arts",
+      "comedy"
+    ],
+    "rating": 4.8,
+    "volumes": []
+  },
+  {
+    "available": false,
+    "id": "tokyo-ghoul",
+    "title": "Tokyo Ghoul",
+    "author": "Sui Ishida",
+    "coverUrl": "assets/mangas/tokyo-ghoul/volume-1/cover.jpg",
+    "description": "College student Kaneki becomes half-ghoul after a deadly encounter, struggling with his new identity in a society divided between humans and ghouls.",
+    "lastUpdated": "2023-08-03T00:00:00.000Z",
+    "tags": [
+      "dark fantasy",
+      "horror",
+      "tragedy",
+      "seinen"
+    ],
+    "rating": 4.3,
+    "volumes": []
+  },
+  {
+    "available": false,
+    "id": "my-hero-academia",
+    "title": "My Hero Academia",
+    "author": "Kohei Horikoshi",
+    "coverUrl": "assets/mangas/my-hero-academia/volume-1/cover.jpg",
+    "description": "In a world where nearly everyone has superpowers called Quirks, Izuku Midoriya trains to become a hero despite being born powerless.",
+    "lastUpdated": "2023-08-09T00:00:00.000Z",
+    "tags": [
+      "action",
+      "superhero",
+      "fantasy",
+      "shounen"
+    ],
+    "rating": 4.5,
+    "volumes": []
+  },
+  {
+    "available": false,
+    "id": "black-clover",
+    "title": "Black Clover",
+    "author": "Yūki Tabata",
+    "coverUrl": "assets/mangas/black-clover/volume-1/cover.jpg",
+    "description": "Asta, a boy born without magic in a world where magic is everything, strives to become the Wizard King.",
+    "lastUpdated": "2023-07-28T00:00:00.000Z",
+    "tags": [
+      "fantasy",
+      "action",
+      "adventure",
+      "shounen"
+    ],
+    "rating": 4.2,
+    "volumes": []
+  },
+  {
+    "available": false,
+    "id": "slam-dunk",
+    "title": "Slam Dunk",
+    "author": "Takehiko Inoue",
+    "coverUrl": "assets/mangas/slam-dunk/volume-1/cover.jpg",
+    "description": "Hanamichi Sakuragi, a delinquent, joins his high school basketball team to impress a girl, discovering his love for the sport.",
+    "lastUpdated": "2023-07-27T00:00:00.000Z",
+    "tags": [
+      "sports",
+      "comedy",
+      "drama",
+      "shounen"
+    ],
+    "rating": 4.7,
+    "volumes": []
+  },
+  {
+    "available": false,
+    "id": "monster",
+    "title": "Monster",
+    "author": "Naoki Urasawa",
+    "coverUrl": "assets/mangas/monster/volume-1/cover.jpg",
+    "description": "Dr. Tenma saves the life of a boy who grows up to be a serial killer, leading him into a psychological thriller across Europe.",
+    "lastUpdated": "2023-08-06T00:00:00.000Z",
+    "tags": [
+      "thriller",
+      "psychological",
+      "seinen",
+      "mystery"
+    ],
+    "rating": 4.9,
+    "volumes": []
+  },
+  {
+    "available": false,
+    "id": "vinland-saga",
+    "title": "Vinland Saga",
+    "author": "Makoto Yukimura",
+    "coverUrl": "assets/mangas/vinland-saga/volume-1/cover.jpg",
+    "description": "A young Viking warrior seeks revenge while being caught up in battles, politics, and the search for a promised land.",
+    "lastUpdated": "2023-08-11T00:00:00.000Z",
+    "tags": [
+      "historical",
+      "seinen",
+      "action",
+      "drama"
+    ],
+    "rating": 4.8,
+    "volumes": []
+  },
+  {
+    "available": false,
+    "id": "the-promised-neverland",
+    "title": "The Promised Neverland",
+    "author": "Kaiu Shirai, Posuka Demizu",
+    "coverUrl": "assets/mangas/the-promised-neverland/volume-1/cover.jpg",
+    "description": "Children at a seemingly idyllic orphanage discover the dark truth behind their existence and plan a daring escape.",
+    "lastUpdated": "2023-08-13T00:00:00.000Z",
+    "tags": [
+      "thriller",
+      "mystery",
+      "horror",
+      "shounen"
+    ],
+    "rating": 4.6,
+    "volumes": []
+  }
+]

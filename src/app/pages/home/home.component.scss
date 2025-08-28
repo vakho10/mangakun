@@ -1,0 +1,17 @@
+.home {
+  padding: 1rem;
+
+  .dropzone {
+    border: 2px dashed rgba(111, 66, 193, 0.5); /* uses theme-ish primary */
+    border-radius: .5rem;
+    background: #faf7ff;
+    cursor: pointer;
+    transition: all .15s ease-in-out;
+
+    &.dragging {
+      border-color: #6f42c1;
+      background: #f3ecff;
+      box-shadow: 0 0 0 .25rem rgba(111, 66, 193, 0.15);
+    }
+  }
+}

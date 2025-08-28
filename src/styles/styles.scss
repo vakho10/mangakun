@@ -1,0 +1,11 @@
+// Configuration - override primary and base colors
+$primary: #6f42c1;
+$body-color: #212529;
+$body-bg: #ffffff;
+
+// Enable extra spacings
+@import "negative-and-extra-spacings";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here

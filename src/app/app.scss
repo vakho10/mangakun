@@ -1,0 +1,5 @@
+main {
+  > :last-child {
+    flex-grow: 1;
+  }
+}
