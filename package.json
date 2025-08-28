@@ -6,7 +6,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --output-path docs --base-href /mangakun/",
+    "build": "ng build",
+    "build:gh": "ng build --configuration production --base-href /mangakun/ && robocopy docs\\browser docs /E /MOVE && rmdir /S /Q docs\\browser",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
