@@ -1,9 +1,10 @@
 import {Chapter} from '../../app/types/all-types';
+import {GameObjects, Loader, Scene} from 'phaser';
 
-export class PreloaderScene extends Phaser.Scene {
+export class PreloaderScene extends Scene {
   private chapter: Chapter;
-  private loadingText?: Phaser.GameObjects.Text;
-  private fileText?: Phaser.GameObjects.Text;
+  private loadingText?: GameObjects.Text;
+  private fileText?: GameObjects.Text;
 
   constructor(chapter: Chapter) {
     super('Preloader');
@@ -45,7 +46,7 @@ export class PreloaderScene extends Phaser.Scene {
     });
 
     // Show which file is being processed
-    this.load.on('fileprogress', (file: Phaser.Loader.File) => {
+    this.load.on('fileprogress', (file: Loader.File) => {
       if (this.fileText) {
         this.fileText.setText(`Loading: ${file.key}`);
       }

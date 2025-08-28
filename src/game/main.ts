@@ -1,11 +1,11 @@
 import {PreloaderScene} from './scenes/PreloaderScene';
-import {Game, Scale, Types} from "phaser";
+import {AUTO, Game, Scale, Types} from "phaser";
 import {ChapterScene} from './scenes/ChapterScene';
 import {Chapter} from '../app/types/all-types';
 
 const StartGame = (parent: string, chapterData: Chapter) => {
   const config: Types.Core.GameConfig = {
-    type: Phaser.AUTO,
+    type: AUTO,
     title: 'MangaFlow',
     parent: parent,
     backgroundColor: '#000000',
