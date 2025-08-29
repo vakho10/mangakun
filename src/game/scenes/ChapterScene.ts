@@ -52,7 +52,10 @@ export class ChapterScene extends Scene {
     EventBus.on('goto-prev-panel', () => this.previousPanel());
     EventBus.on('goto-next-panel', () => this.nextPanel());
     EventBus.on('goto-last-panel', () => this.lastPanel());
-    EventBus.on('focus-on-current-panel', () => this.focusOnOverlay(this.currentPanelIndex, true));
+    EventBus.on('focus-on-current-panel', () => {
+      if (this.currentPanelIndex < 0) return;
+      this.focusOnOverlay(this.currentPanelIndex, true)
+    });
   }
 
   create() {
