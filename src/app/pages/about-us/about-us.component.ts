@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-about-us',
@@ -11,4 +12,6 @@ import {NgOptimizedImage} from '@angular/common';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AboutUsComponent {}
+export class AboutUsComponent {
+  protected readonly environment = environment;
+}
