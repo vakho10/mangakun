@@ -10,3 +10,5 @@ Demo website available at https://vakho10.github.io/mangakun
 
 * https://polygonzone.roboflow.com - Helpful to get coordinates of polygons for panels.
 * https://docs.phaser.io - PhaserJS documentation.
+* https://finevoice.fineshare.com/ai-voice-changer - AI voice changer.
+  * Used AI bots for "All You Need is Kill" manga characters: Keiji (Daniel), Rita (Emily), Radio Voice (Henry Young), Jin (James).
