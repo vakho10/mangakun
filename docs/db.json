@@ -44,15 +44,16 @@
                         {
                           "src": "assets/audios/Slow Breathing-SoundBible.com-603073868.mp3",
                           "loop": true,
-                          "volume": 0.45,
+                          "volume": 0.35,
                           "fadeIn": 500
                         }
                       ],
                       "tts": [
                         {
-                          "src": "assets/audios/page1_frame1.mp3",
+                          "src": "assets/audios/1.mp3",
                           "restart": true,
-                          "delay": 500
+                          "delay": 750,
+                          "fadeIn": 500
                         }
                       ]
                     }
@@ -74,20 +75,15 @@
                         {
                           "src": "assets/audios/Slow Breathing-SoundBible.com-603073868.mp3",
                           "loop": true,
-                          "volume": 0.45,
+                          "volume": 0.35,
                           "fadeIn": 500
                         }
                       ],
                       "tts": [
                         {
-                          "src": "assets/audios/page1_frame2.mp3",
+                          "src": "assets/audios/2.mp3",
                           "restart": true,
                           "delay": 500
-                        },
-                        {
-                          "src": "assets/audios/page1_frame3.mp3",
-                          "restart": true,
-                          "delay": 3750
                         }
                       ]
                     }
@@ -117,7 +113,7 @@
                         {
                           "src": "assets/audios/Slow Breathing-SoundBible.com-603073868.mp3",
                           "loop": true,
-                          "volume": 0.45,
+                          "volume": 0.35,
                           "fadeIn": 500
                         }
                       ]
@@ -135,7 +131,23 @@
                       [1500, 49],
                       [1500, 600],
                       [1050, 600]
-                    ]
+                    ],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/page2_page_3_bg.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "sfx": [
+                        {
+                          "src": "assets/audios/3_0.mp3",
+                          "restart": true,
+                          "delay": 750
+                        }
+                      ]
+                    }
                   },
                   {
                     "coordinates": [
@@ -143,7 +155,23 @@
                       [1027, 49],
                       [1027, 603],
                       [164, 603]
-                    ]
+                    ],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/page2_page_3_bg.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "sfx": [
+                        {
+                          "src": "assets/audios/3_1.mp3",
+                          "restart": true,
+                          "delay": 750
+                        }
+                      ]
+                    }
                   },
                   {
                     "coordinates": [
@@ -151,7 +179,32 @@
                       [1500, 672],
                       [1500, 2250],
                       [0, 2250]
-                    ]
+                    ],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/page2_page_3_bg.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "sfx": [
+                        {
+                          "src": "assets/audios/fm-radio-static-82334.mp3",
+                          "loop": true,
+                          "volume": 0.35,
+                          "fadeIn": 500
+                        }
+                      ],
+                      "tts": [
+                        {
+                          "src": "assets/audios/3.mp3",
+                          "restart": true,
+                          "delay": 500,
+                          "fadeIn": 1000
+                        }
+                      ]
+                    }
                   }
                 ]
               },
@@ -165,7 +218,40 @@
                       [1500, 0],
                       [1500, 1011],
                       [90, 1011]
-                    ]
+                    ],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/page2_page_3_bg.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "sfx": [
+                        {
+                          "src": "assets/audios/fm-radio-static-82334.mp3",
+                          "restart": true,
+                          "loop": false,
+                          "volume": 0.1,
+                          "fadeOut": 500
+                        }
+                      ],
+                      "tts": [
+                        {
+                          "src": "assets/audios/4.mp3",
+                          "restart": true,
+                          "volume": 0.45,
+                          "delay": 500,
+                          "fadeOut": 500
+                        },
+                        {
+                          "src": "assets/audios/5.mp3",
+                          "restart": true,
+                          "delay": 2000,
+                          "fadeIn": 500
+                        }
+                      ]
+                    }
                   },
                   {
                     "coordinates": [
@@ -173,7 +259,33 @@
                       [1359, 1077],
                       [1359, 1364],
                       [90, 1364]
-                    ]
+                    ],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/page2_page_3_bg.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "sfx": [
+                        {
+                          "src": "assets/audios/boom.mp3",
+                          "restart": true,
+                          "volume": 0.4,
+                          "fadeIn": 500,
+                          "fadeOut": 500
+                        },
+                        {
+                          "src": "assets/audios/AAAGH1.mp3",
+                          "restart": true,
+                          "volume": 0.25,
+                          "delay": 750,
+                          "fadeIn": 500,
+                          "fadeOut": 500
+                        }
+                      ]
+                    }
                   },
                   {
                     "coordinates": [
@@ -181,7 +293,16 @@
                       [1500, 1430],
                       [1500, 2108],
                       [743, 2108]
-                    ]
+                    ],
+                    "events" : {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/page2_page_3_bg.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ]
+                    }
                   },
                   {
                     "coordinates": [
@@ -189,7 +310,29 @@
                       [728, 1433],
                       [728, 2250],
                       [90, 2250]
-                    ]
+                    ],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/page2_page_3_bg.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "tts": [
+                        {
+                          "src": "assets/audios/6.mp3",
+                          "restart": true,
+                          "volume": 0.8
+                        },
+                        {
+                          "src": "assets/audios/7.mp3",
+                          "restart": true,
+                          "delay": 6000,
+                          "fadeIn": 500
+                        }
+                      ]
+                    }
                   }
                 ]
               },
@@ -203,7 +346,23 @@
                       [1500, 59],
                       [1500, 1051],
                       [822, 1051]
-                    ]
+                    ],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/page2_page_3_bg.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "tts": [
+                        {
+                          "src": "assets/audios/8.mp3",
+                          "restart": true,
+                          "fadeIn": 500
+                        }
+                      ]
+                    }
                   },
                   {
                     "coordinates": [
@@ -211,7 +370,30 @@
                       [799, 56],
                       [799, 616],
                       [0, 616]
-                    ]
+                    ],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/page2_page_3_bg.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "tts": [
+                        {
+                          "src": "assets/audios/9.mp3",
+                          "restart": true,
+                          "fadeIn": 500,
+                          "delay": 500
+                        },
+                        {
+                          "src": "assets/audios/10.mp3",
+                          "restart": true,
+                          "fadeIn": 500,
+                          "delay": 2500
+                        }
+                      ]
+                    }
                   },
                   {
                     "coordinates": [
@@ -219,7 +401,30 @@
                       [799, 679],
                       [799, 1051],
                       [124, 1051]
-                    ]
+                    ],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/page2_page_3_bg.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "tts": [
+                        {
+                          "src": "assets/audios/11.mp3",
+                          "restart": true,
+                          "fadeIn": 500
+                        },
+                        {
+                          "src": "assets/audios/12.mp3",
+                          "restart": true,
+                          "delay": 1500,
+                          "fadeIn": 500,
+                          "fadeOut": 750
+                        }
+                      ]
+                    }
                   },
                   {
                     "coordinates": [
