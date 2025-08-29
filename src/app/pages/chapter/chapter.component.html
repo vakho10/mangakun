@@ -1,39 +1,39 @@
 <div class="d-flex flex-column flex-grow-1 position-relative">
   <div #container class="flex-grow-1 d-flex flex-column"></div>
   @if (chapter$ | async; as chapterData) {
-    <div class="position-absolute z-1 top-0 left-0 w-100 d-flex flex-row justify-content-center mt-6">
+    <div class="position-absolute z-1 top-0 left-0 w-100 d-flex flex-row mt-3 mt-sm-6 mx-3">
       <div class="d-flex flex-column gap-3">
-        <a routerLink="/" class="btn btn-primary btn-lg">&laquo; Home</a>
+        <a routerLink="/" class="btn btn-primary">&laquo; Home</a>
       </div>
     </div>
-    <div class="position-absolute z-1 bottom-0 left-0 w-100 d-flex flex-row justify-content-center mb-6">
+    <div class="position-absolute z-1 bottom-0 left-0 w-100 d-flex flex-row justify-content-center mb-3 mb-sm-6 mx-3">
       <div class="d-flex flex-column gap-3">
         <!-- [Buttons] -->
-        <div class="btn-group shadow-lg fade" [class.d-none]="!chapterLoaded" [class.show]="chapterLoaded"
+        <div class="btn-group fade" [class.d-none]="!chapterLoaded" [class.show]="chapterLoaded"
              role="group" aria-label="Basic example">
           <!-- [First] -->
-          <button type="button" class="btn btn-primary btn-lg"
+          <button type="button" class="btn btn-primary"
                   (click)="gotoFirstPanel()"
                   [class.disabled]="panelNum == 1">
             First
           </button>
           <!-- [Prev] -->
-          <button type="button" class="btn btn-primary btn-lg"
+          <button type="button" class="btn btn-primary"
                   (click)="gotoPrevPanel()"
                   [class.disabled]="panelNum == 1">
             Prev
           </button>
-          <button type="button" class="btn btn-primary btn-lg disabled">
+          <button type="button" class="btn btn-primary disabled">
             C: {{ chapterData.number }}, P: {{ panelNum }}
           </button>
           <!-- [Next] -->
-          <button type="button" class="btn btn-primary btn-lg"
+          <button type="button" class="btn btn-primary"
                   (click)="gotoNextPanel()"
                   [class.disabled]="panelNum == chapterData.pages.length">
             Next
           </button>
           <!-- [Last] -->
-          <button type="button" class="btn btn-primary btn-lg"
+          <button type="button" class="btn btn-primary"
                   (click)="gotoLastPanel()"
                   [class.disabled]="panelNum == chapterData.pages.length">
             Last

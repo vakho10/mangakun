@@ -19,11 +19,11 @@
               @if (manga.volumes?.length) {
                 <!-- Volumes -->
                 @for (volume of manga.volumes; track volume.number) {
-                  <div class="card mb-3">
+                  <div class="card mb-3 border-0">
                     <div class="row g-0">
                       <div class="col-md-4">
                         <img [src]="volume.coverUrl" [class.opacity-25]="!volume.chapters?.length"
-                             class="img-fluid rounded-start" alt="volume cover image">
+                             class="img-fluid rounded" alt="volume cover image">
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
@@ -41,9 +41,9 @@
                                   </a>
                                 }
                               } @else {
-                                <p class="text-danger">
+                                <div class="alert alert-warning text-center">
                                   <i class="fa-solid fa-circle-info"></i> No chapters available yet.
-                                </p>
+                                </div>
                               }
                             </div>
                           </div>
@@ -53,9 +53,9 @@
                   </div>
                 }
               } @else {
-                <p class="text-danger">
+                <div class="alert alert-warning text-center">
                   <i class="fa-solid fa-circle-info"></i> No volumes available yet.
-                </p>
+                </div>
               }
             </div>
             <div class="mt-3">
