@@ -20,8 +20,8 @@ export class MainController {
 
   isAnimationInProgress = false;
 
-  async init() {
-    await this.gotoOverlay(0, false, false, false);
+  init() {
+    this.gotoOverlay(0, false, false, false);
     this.currentOverlayIndex = -1;
   }
 
