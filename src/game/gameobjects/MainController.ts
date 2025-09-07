@@ -4,7 +4,6 @@ import {PageContainer} from './PageContainer';
 import {Overlay} from './Overlay';
 import {EventBus} from '../EventBus';
 import {AudioController} from './AudioController';
-import PointTuple = MangaKunTypes.PointTuple;
 
 export class MainController {
 
@@ -50,7 +49,7 @@ export class MainController {
           pageImage
         );
 
-        const wholePageCoords: PointTuple[] = [
+        const wholePageCoords: MangaKunTypes.PointTuple[] = [
           [0, 0], [pageImage.displayWidth, 0],
           [pageImage.displayWidth, pageImage.displayHeight], [0, pageImage.displayHeight]
         ];
