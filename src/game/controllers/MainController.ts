@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import {MangaKunTypes} from '../../app/types/all-types';
-import {PageContainer} from './PageContainer';
-import {Overlay} from './Overlay';
+import {PageContainer} from '../gameobjects/PageContainer';
+import {Overlay} from '../gameobjects/Overlay';
 import {EventBus} from '../EventBus';
 import {AudioController} from './AudioController';
 
@@ -20,8 +20,7 @@ export class MainController {
   isAnimationInProgress = false;
 
   init() {
-    this.gotoOverlay(0, false, false, false);
-    this.currentOverlayIndex = -1;
+    this.gotoOverlay(0, false, false, false, false);
   }
 
   loadChapterData(scene: Phaser.Scene, chapter: MangaKunTypes.Chapter) {
@@ -88,7 +87,7 @@ export class MainController {
     console.log('Overlays: ', this.overlays);
   }
 
-  gotoOverlay(overlayIndex: number, animate: boolean, hideAfter: boolean, playAudio: boolean = true) {
+  gotoOverlay(overlayIndex: number, animate: boolean, hideAfter: boolean, playAudio: boolean = true, updateOverlayIndex = true) {
     const newOverlayIndex = overlayIndex;
     if (this.overlays.length <= newOverlayIndex || newOverlayIndex < 0) {
       return;
@@ -100,8 +99,10 @@ export class MainController {
       if (playAudio) {
         this.audioController.playOverlaySounds(this.scene, this.chapter, newOverlayIndex);
       }
-      this.currentOverlayIndex = newOverlayIndex; // Update the current overlay index
-      EventBus.emit('on-overlay-changed', newOverlayIndex);
+      if (updateOverlayIndex) {
+        this.currentOverlayIndex = newOverlayIndex; // Update the current overlay index
+        EventBus.emit('on-overlay-changed', newOverlayIndex);
+      }
       this.isAnimationInProgress = false;
     });
   }

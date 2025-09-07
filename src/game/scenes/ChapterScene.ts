@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import {EventBus} from '../EventBus';
 import {MangaKunTypes} from '../../app/types/all-types';
-import {MainController} from '../gameobjects/MainController';
+import {MainController} from '../controllers/MainController';
 
 
 export class ChapterScene extends Phaser.Scene {
@@ -23,7 +23,8 @@ export class ChapterScene extends Phaser.Scene {
     EventBus.on('goto-last-panel', () => this.mainController.gotoLastOverlay());
     EventBus.on('focus-on-current-panel', () => {
       // Just focus on the current panel without no extra actions
-      this.mainController.gotoOverlay(0, false, false);
+      this.mainController.gotoOverlay(this.mainController.currentOverlayIndex == -1 ? 0
+        : this.mainController.currentOverlayIndex, false, false, false, false);
     });
   }
 

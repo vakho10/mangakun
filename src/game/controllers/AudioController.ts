@@ -123,33 +123,47 @@ export class AudioController {
       newKeys.add(key);
 
       const alreadyActive = activeKeys.has(key);
+      const targetVolume = ev.volume ?? 1;
 
-      // BGM should continue if already playing and same track
-      if (type === "bgm" && alreadyActive) return;
+      if (alreadyActive) {
+        const existing = map.get(key);
+        if (existing) {
+          const webSound = existing as Phaser.Sound.WebAudioSound;
+          const currentVolume = webSound.volume ?? 1;
 
-      // SFX/TTs: restart only if specified
-      if ((type === "sfx" || type === "tts") && alreadyActive && !ev.restart) return;
+          // Smoothly transition to a new volume level if it changed
+          if (currentVolume !== targetVolume) {
+            scene.tweens.add({
+              targets: webSound,
+              volume: targetVolume,
+              duration: fadeIn,
+              ease: 'Linear'
+            });
+          }
+        }
 
-      if (alreadyActive && ev.restart) {
-        const prev = map.get(key);
-        if (prev) {
-          this.fadeOutAndStop(scene, prev, fadeOut);
+        // BGM should keep playing if already active
+        if (type === "bgm") return;
+
+        // SFX/TTS: restart if requested
+        if ((type === "sfx" || type === "tts") && !ev.restart) return;
+        if (ev.restart) {
+          this.fadeOutAndStop(scene, existing!, fadeOut);
           map.delete(key);
         }
       }
 
+      // Create new sound if not active or forced restart
       const sound = scene.sound.add(key, {
         loop: ev.loop ?? (type === "bgm"),
         volume: 0
       });
       map.set(key, sound);
 
-      // Play after a delay if specified, otherwise immediately
       const delayedCall = scene.time.delayedCall(ev.delay ?? 0, () => {
         sound.play();
-        scene.tweens.add({targets: sound, volume: ev.volume ?? 1, duration: fadeIn, ease: 'Linear'});
+        scene.tweens.add({targets: sound, volume: targetVolume, duration: fadeIn, ease: 'Linear'});
 
-        // Stop after duration if specified
         if (ev.duration) {
           const stopCall = scene.time.delayedCall(ev.duration, () => {
             this.fadeOutAndStop(scene, sound, fadeOut);
@@ -159,11 +173,10 @@ export class AudioController {
         }
       });
 
-      // Keep track of delayed calls for cancellation on skip
       this.pendingDelayedCalls.push(delayedCall);
     });
 
-    // Stop layers that are not present in a new panel
+    // Stop layers missing in the new panel
     this.stopMissingLayers(scene, type, newKeys, events);
 
     if (type === 'bgm') this.activeBgmKeys = newKeys;

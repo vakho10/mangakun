@@ -4,6 +4,9 @@ import {MangaKunTypes} from '../../app/types/all-types';
 export class PreloaderScene extends Scene {
   private loadingText?: GameObjects.Text;
   private fileText?: GameObjects.Text;
+  private progressBar?: GameObjects.Graphics;
+  private progressBox?: GameObjects.Graphics;
+  private lastProgress = 0; // track progress (0..1)
 
   private chapter: MangaKunTypes.Chapter;
 
@@ -19,31 +22,28 @@ export class PreloaderScene extends Scene {
     this.game.registry.set('chapterData', this.chapter);
 
     // Loading UI
-    this.loadingText = this.add
-      .text(width / 2, height / 2 - 40, 'Loading...', {
-        font: '20px Arial',
-        color: '#ffffff',
-      })
-      .setOrigin(0.5);
+    this.loadingText = this.add.text(width / 2, height / 2 - 40, 'Loading...', {
+      font: '20px Arial',
+      color: '#ffffff',
+    }).setOrigin(0.5);
 
-    this.fileText = this.add
-      .text(width / 2, height / 2, '', {
-        font: '16px Arial',
-        color: '#aaaaaa',
-        wordWrap: {width: 320}
-      })
-      .setOrigin(0.5);
+    this.fileText = this.add.text(width / 2, height / 2, '', {
+      font: '16px Arial',
+      color: '#aaaaaa',
+      wordWrap: {width: 320}
+    }).setOrigin(0.5);
 
-    const progressBar = this.add.graphics();
-    const progressBox = this.add.graphics();
-    progressBox.fillStyle(0x222222, 0.8);
-    progressBox.fillRect(width / 2 - 160, height / 2 + 30, 320, 50);
+    this.progressBox = this.add.graphics();
+    this.progressBar = this.add.graphics();
+
+    // Initial draw
+    this.drawProgressBox(width, height);
+    this.drawProgressBar(width, height, 0);
 
     // Update progress bar
     this.load.on('progress', (value: number) => {
-      progressBar.clear();
-      progressBar.fillStyle(0xffffff, 1);
-      progressBar.fillRect(width / 2 - 150, height / 2 + 40, 300 * value, 30);
+      this.lastProgress = value;
+      this.drawProgressBar(this.cameras.main.width, this.cameras.main.height, value);
     });
 
     // Show which file is being processed
@@ -55,8 +55,8 @@ export class PreloaderScene extends Scene {
 
     // Completed loading
     this.load.on('complete', () => {
-      progressBar.destroy();
-      progressBox.destroy();
+      this.progressBar?.destroy();
+      this.progressBox?.destroy();
       if (this.loadingText) {
         this.loadingText.setText(`Loaded Chapter: ${this.chapter.number}`);
       }
@@ -65,34 +65,30 @@ export class PreloaderScene extends Scene {
       this.scene.start('ChapterScene');
     });
 
+    // Responsive handling
+    this.scale.on('resize', this.onResize, this);
+
     // Load assets dynamically
     this.loadChapterAssets(this.chapter);
   }
 
   private loadChapterAssets(chapter: MangaKunTypes.Chapter) {
-    // Pages and panels
     chapter.pages.forEach((page) => {
-
       // Save id for image as its path
       this.load.image(page.imagePath, page.imagePath);
 
       // Load panel data (if available)
       if (page.overlays) {
         page.overlays.forEach((panel) => {
-
-          // Load sound
           if (panel.events) {
-
             // Load bgm
             if (panel.events.bgm) {
               panel.events.bgm.forEach((bgm) => this.saveLoadAudio("bgm", bgm.src));
             }
-
             // Load sfx
             if (panel.events.sfx) {
               panel.events.sfx.forEach((sfx) => this.saveLoadAudio("sfx", sfx.src));
             }
-
             // Load tts
             if (panel.events.tts) {
               panel.events.tts.forEach((tts) => this.saveLoadAudio("tts", tts.src));
@@ -107,5 +103,33 @@ export class PreloaderScene extends Scene {
     if (!this.cache.audio.exists(src)) {
       this.load.audio(`${type}-${src}`, src);
     }
+  }
+
+  // -------------------------
+  // Helpers for UI
+  // -------------------------
+  private drawProgressBox(width: number, height: number) {
+    if (!this.progressBox) return;
+    this.progressBox.clear();
+    this.progressBox.fillStyle(0x222222, 0.8);
+    this.progressBox.fillRect(width / 2 - 160, height / 2 + 30, 320, 50);
+  }
+
+  private drawProgressBar(width: number, height: number, value: number) {
+    if (!this.progressBar) return;
+    this.progressBar.clear();
+    this.progressBar.fillStyle(0xffffff, 1);
+    this.progressBar.fillRect(width / 2 - 150, height / 2 + 40, 300 * value, 30);
+  }
+
+  private onResize(gameSize: Phaser.Structs.Size) {
+    const width = gameSize.width;
+    const height = gameSize.height;
+
+    if (this.loadingText) this.loadingText.setPosition(width / 2, height / 2 - 40);
+    if (this.fileText) this.fileText.setPosition(width / 2, height / 2);
+
+    this.drawProgressBox(width, height);
+    this.drawProgressBar(width, height, this.lastProgress);
   }
 }
