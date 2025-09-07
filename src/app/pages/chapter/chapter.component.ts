@@ -43,7 +43,7 @@ export class ChapterComponent implements AfterViewInit {
       componentRef.instance.chapterData = chapterData!;
 
       EventBus.on('chapter-loaded', () => this.chapterLoaded = true);
-      EventBus.on('on-panel-changed', (currentPanelIndex: number) => this.panelNum = currentPanelIndex + 1);
+      EventBus.on('on-overlay-changed', (currentPanelIndex: number) => this.panelNum = currentPanelIndex + 1);
     });
   }
 

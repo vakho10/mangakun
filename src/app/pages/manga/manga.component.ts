@@ -4,7 +4,7 @@ import {ActivatedRoute, RouterLink} from '@angular/router';
 import {map, switchMap} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {MangaService} from '../../services/manga.service';
-import {Manga} from '../../types/all-types';
+import {MangaKunTypes} from '../../types/all-types';
 
 @Component({
   selector: 'app-manga',
@@ -18,7 +18,7 @@ export class MangaComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly mangaService = inject(MangaService);
 
-  manga$: Observable<Manga | undefined> = this.route.paramMap.pipe(
+  manga$: Observable<MangaKunTypes.Manga | undefined> = this.route.paramMap.pipe(
     map(params => params.get('id') ?? ''),
     switchMap(id => this.mangaService.getMangaById(id))
   );

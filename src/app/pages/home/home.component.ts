@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {Observable} from 'rxjs';
 import {MangaService} from '../../services/manga.service';
 import {RouterLink} from '@angular/router';
-import {Manga} from '../../types/all-types';
+import {MangaKunTypes} from '../../types/all-types';
 
 @Component({
   selector: 'app-home',
@@ -15,5 +15,5 @@ import {Manga} from '../../types/all-types';
 })
 export class HomeComponent {
   private readonly mangaService = inject(MangaService);
-  mangas$: Observable<Manga[]> = this.mangaService.getMangas();
+  mangas$: Observable<MangaKunTypes.Manga[]> = this.mangaService.getMangas();
 }

@@ -1,9 +1,9 @@
 import {PreloaderScene} from './scenes/PreloaderScene';
 import {AUTO, Game, Scale, Types} from "phaser";
 import {ChapterScene} from './scenes/ChapterScene';
-import {Chapter} from '../app/types/all-types';
+import {MangaKunTypes} from '../app/types/all-types';
 
-const StartGame = (parent: string, chapterData: Chapter) => {
+const StartGame = (parent: string, chapterData: MangaKunTypes.Chapter) => {
   const config: Types.Core.GameConfig = {
     type: AUTO,
     title: 'MangaFlow',
@@ -16,7 +16,10 @@ const StartGame = (parent: string, chapterData: Chapter) => {
       mode: Scale.NONE,
       autoCenter: Scale.NO_CENTER,
     },
-    scene: [new PreloaderScene(chapterData), ChapterScene]
+    scene: [
+      new PreloaderScene(chapterData),
+      ChapterScene
+    ]
   }
   return new Game(config);
 }

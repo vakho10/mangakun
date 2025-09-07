@@ -26,12 +26,11 @@
               {
                 "pageNumber": 1,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-1.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0], [784, 0], [784, 482], [679, 482], [679, 552], [82, 552], [82, 482], [0, 482]
                     ],
-                    "center": [392, 274],
                     "events": {
                       "bgm": [
                         {
@@ -62,7 +61,6 @@
                     "coordinates": [
                       [0, 482], [82, 482], [82, 552], [679, 552], [679, 482], [784, 482], [784, 1145], [0, 1145]
                     ],
-                    "center": [392, 776],
                     "events": {
                       "bgm": [
                         {
@@ -93,7 +91,7 @@
               {
                 "pageNumber": 2,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-2.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -124,7 +122,7 @@
               {
                 "pageNumber": 3,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-3.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [1050, 49],
@@ -211,7 +209,7 @@
               {
                 "pageNumber": 4,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-4.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [90, 0],
@@ -294,7 +292,7 @@
                       [1500, 2108],
                       [743, 2108]
                     ],
-                    "events" : {
+                    "events": {
                       "bgm": [
                         {
                           "src": "assets/audios/page2_page_3_bg.mp3",
@@ -339,7 +337,7 @@
               {
                 "pageNumber": 5,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-5.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [822, 59],
@@ -447,7 +445,7 @@
               {
                 "pageNumber": 6,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-6.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [88, 0],
@@ -485,7 +483,7 @@
               {
                 "pageNumber": 7,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-7.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [691, 0],
@@ -523,7 +521,7 @@
               {
                 "pageNumber": 8,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-8.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -537,7 +535,7 @@
               {
                 "pageNumber": 9,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-9.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -551,7 +549,7 @@
               {
                 "pageNumber": 10,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-10.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -565,7 +563,7 @@
               {
                 "pageNumber": 11,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-11.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -579,7 +577,7 @@
               {
                 "pageNumber": 12,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-12.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -593,7 +591,7 @@
               {
                 "pageNumber": 13,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-13.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -607,7 +605,7 @@
               {
                 "pageNumber": 14,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-14.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -621,7 +619,7 @@
               {
                 "pageNumber": 15,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-15.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -635,7 +633,7 @@
               {
                 "pageNumber": 16,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-16.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -649,7 +647,7 @@
               {
                 "pageNumber": 17,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-17.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -663,7 +661,7 @@
               {
                 "pageNumber": 18,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-18.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -677,7 +675,7 @@
               {
                 "pageNumber": 19,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-19.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -691,7 +689,7 @@
               {
                 "pageNumber": 20,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-20.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -705,7 +703,7 @@
               {
                 "pageNumber": 21,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-21.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -719,7 +717,7 @@
               {
                 "pageNumber": 22,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-22.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -733,7 +731,7 @@
               {
                 "pageNumber": 23,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-23.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -747,7 +745,7 @@
               {
                 "pageNumber": 24,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-24.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -761,7 +759,7 @@
               {
                 "pageNumber": 25,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-25.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -775,7 +773,7 @@
               {
                 "pageNumber": 26,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-26.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -789,7 +787,7 @@
               {
                 "pageNumber": 27,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-27.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -803,7 +801,7 @@
               {
                 "pageNumber": 28,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-28.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -817,7 +815,7 @@
               {
                 "pageNumber": 29,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-29.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -831,7 +829,7 @@
               {
                 "pageNumber": 30,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-30.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -845,7 +843,7 @@
               {
                 "pageNumber": 31,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-31.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -859,7 +857,7 @@
               {
                 "pageNumber": 32,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-32.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -873,7 +871,7 @@
               {
                 "pageNumber": 33,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-33.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -887,7 +885,7 @@
               {
                 "pageNumber": 34,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-34.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -901,7 +899,7 @@
               {
                 "pageNumber": 35,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-35.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -915,7 +913,7 @@
               {
                 "pageNumber": 36,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-36.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -929,7 +927,7 @@
               {
                 "pageNumber": 37,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-37.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -943,7 +941,7 @@
               {
                 "pageNumber": 38,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-38.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -957,7 +955,7 @@
               {
                 "pageNumber": 39,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-39.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -971,7 +969,7 @@
               {
                 "pageNumber": 40,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-40.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -985,7 +983,7 @@
               {
                 "pageNumber": 41,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-41.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -999,7 +997,7 @@
               {
                 "pageNumber": 42,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-42.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1013,7 +1011,7 @@
               {
                 "pageNumber": 43,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-43.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1027,7 +1025,7 @@
               {
                 "pageNumber": 44,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-44.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1041,7 +1039,7 @@
               {
                 "pageNumber": 45,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-45.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1055,7 +1053,7 @@
               {
                 "pageNumber": 46,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-46.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1069,7 +1067,7 @@
               {
                 "pageNumber": 47,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-47.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1083,7 +1081,7 @@
               {
                 "pageNumber": 48,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-48.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1097,7 +1095,7 @@
               {
                 "pageNumber": 49,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-49.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1111,7 +1109,7 @@
               {
                 "pageNumber": 50,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-50.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1125,7 +1123,7 @@
               {
                 "pageNumber": 51,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-51.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1139,7 +1137,7 @@
               {
                 "pageNumber": 52,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-52.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1153,7 +1151,7 @@
               {
                 "pageNumber": 53,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-53.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1167,7 +1165,7 @@
               {
                 "pageNumber": 54,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-54.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1181,7 +1179,7 @@
               {
                 "pageNumber": 55,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-55.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1195,7 +1193,7 @@
               {
                 "pageNumber": 56,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-56.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1209,7 +1207,7 @@
               {
                 "pageNumber": 57,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-57.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1223,7 +1221,7 @@
               {
                 "pageNumber": 58,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-58.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1237,7 +1235,7 @@
               {
                 "pageNumber": 59,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-59.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1251,7 +1249,7 @@
               {
                 "pageNumber": 60,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-60.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1265,7 +1263,7 @@
               {
                 "pageNumber": 61,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-61.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1279,7 +1277,7 @@
               {
                 "pageNumber": 62,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-62.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1293,7 +1291,7 @@
               {
                 "pageNumber": 63,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-63.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1307,7 +1305,7 @@
               {
                 "pageNumber": 64,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-64.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],
@@ -1321,7 +1319,7 @@
               {
                 "pageNumber": 65,
                 "imagePath": "assets/mangas/all-you-need-is-kill/volume-1/chapter-1/page-65.jpg",
-                "panels": [
+                "overlays": [
                   {
                     "coordinates": [
                       [0, 0],

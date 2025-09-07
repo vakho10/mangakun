@@ -1,12 +1,13 @@
-import {Chapter} from '../../app/types/all-types';
 import {GameObjects, Loader, Scene} from 'phaser';
+import {MangaKunTypes} from '../../app/types/all-types';
 
 export class PreloaderScene extends Scene {
-  private chapter: Chapter;
   private loadingText?: GameObjects.Text;
   private fileText?: GameObjects.Text;
 
-  constructor(chapter: Chapter) {
+  private chapter: MangaKunTypes.Chapter;
+
+  constructor(chapter: MangaKunTypes.Chapter) {
     super('Preloader');
     this.chapter = chapter;
   }
@@ -68,7 +69,7 @@ export class PreloaderScene extends Scene {
     this.loadChapterAssets(this.chapter);
   }
 
-  private loadChapterAssets(chapter: Chapter) {
+  private loadChapterAssets(chapter: MangaKunTypes.Chapter) {
     // Pages and panels
     chapter.pages.forEach((page) => {
 
@@ -76,8 +77,8 @@ export class PreloaderScene extends Scene {
       this.load.image(page.imagePath, page.imagePath);
 
       // Load panel data (if available)
-      if (page.panels) {
-        page.panels.forEach((panel) => {
+      if (page.overlays) {
+        page.overlays.forEach((panel) => {
 
           // Load sound
           if (panel.events) {
