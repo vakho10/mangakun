@@ -324,10 +324,10 @@
                           "volume": 0.8
                         },
                         {
-                          "src": "assets/audios/7.mp3",
+                          "src": "assets/audios/7.wav",
                           "restart": true,
                           "delay": 6000,
-                          "fadeIn": 500
+                          "fadeIn": 200
                         }
                       ]
                     }
@@ -355,9 +355,9 @@
                       ],
                       "tts": [
                         {
-                          "src": "assets/audios/8.mp3",
+                          "src": "assets/audios/8.wav",
                           "restart": true,
-                          "fadeIn": 500,
+                          "fadeIn": 200,
                           "delay": 750
                         }
                       ],
@@ -425,7 +425,31 @@
                       [1500, 1117],
                       [1500, 2036],
                       [1145, 2036]
-                    ]
+                    ],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/page2_page_3_bg.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "tts": [
+                        {
+                          "src": "assets/audios/11.wav",
+                          "restart": true,
+                          "fadeIn": 500,
+                          "fadeOut": 200
+                        },
+                        {
+                          "src": "assets/audios/12.wav",
+                          "restart": true,
+                          "delay": 2000,
+                          "fadeIn": 200,
+                          "fadeOut": 200
+                        }
+                      ]
+                    }
                   },
                   {
                     "coordinates": [
@@ -433,7 +457,24 @@
                       [1112, 1117],
                       [1112, 2250],
                       [0, 2250]
-                    ]
+                    ],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/page2_page_3_bg.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "tts": [
+                        {
+                          "src": "assets/audios/13.wav",
+                          "restart": true,
+                          "fadeIn": 200,
+                          "fadeOut": 200
+                        }
+                      ]
+                    }
                   }
                 ]
               },
@@ -447,7 +488,31 @@
                       [1356, 0],
                       [1356, 632],
                       [88, 632]
-                    ]
+                    ],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/page2_page_3_bg.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "tts": [
+                        {
+                          "src": "assets/audios/14.wav",
+                          "restart": true,
+                          "fadeIn": 200,
+                          "fadeOut": 200
+                        },
+                        {
+                          "src": "assets/audios/15.wav",
+                          "restart": true,
+                          "fadeIn": 200,
+                          "fadeOut": 200,
+                          "delay": 6000
+                        }
+                      ]
+                    }
                   },
                   {
                     "coordinates": [
@@ -455,7 +520,24 @@
                       [1500, 692],
                       [1500, 1654],
                       [93, 1654]
-                    ]
+                    ],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/page2_page_3_bg.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "tts": [
+                        {
+                          "src": "assets/audios/16.wav",
+                          "restart": true,
+                          "fadeIn": 200,
+                          "fadeOut": 200
+                        }
+                      ]
+                    }
                   },
                   {
                     "coordinates": [
@@ -463,7 +545,24 @@
                       [1353, 1713],
                       [1353, 2135],
                       [523, 2135]
-                    ]
+                    ],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/page2_page_3_bg.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "tts": [
+                        {
+                          "src": "assets/audios/17.wav",
+                          "restart": true,
+                          "fadeIn": 200,
+                          "fadeOut": 200
+                        }
+                      ]
+                    }
                   },
                   {
                     "coordinates": [
@@ -471,7 +570,31 @@
                       [503, 1713],
                       [503, 2135],
                       [88, 2135]
-                    ]
+                    ],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/page2_page_3_bg.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "sfx": [
+                        {
+                          "src": "assets/audios/hit.wav",
+                          "restart": true,
+                          "fadeIn": 100,
+                          "fadeOut": 100
+                        },
+                        {
+                          "src": "assets/audios/ouch.wav",
+                          "restart": true,
+                          "fadeIn": 200,
+                          "fadeOut": 200,
+                          "delay": 500
+                        }
+                      ]
+                    }
                   }
                 ]
               },
@@ -485,7 +608,24 @@
                       [1435, 0],
                       [1435, 593],
                       [691, 593]
-                    ]
+                    ],
+                    "events": {
+                      "bgm": [
+                        {
+                          "src": "assets/audios/page2_page_3_bg.mp3",
+                          "volume": 0.4,
+                          "loop": true
+                        }
+                      ],
+                      "tts": [
+                        {
+                          "src": "assets/audios/18.wav",
+                          "restart": true,
+                          "fadeIn": 200,
+                          "fadeOut": 200
+                        }
+                      ]
+                    }
                   },
                   {
                     "coordinates": [

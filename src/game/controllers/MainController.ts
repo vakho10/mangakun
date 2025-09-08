@@ -21,7 +21,13 @@ export class MainController {
   isAnimationInProgress = false;
 
   init() {
-    this.gotoOverlay(0, false, false, false, false);
+    // Get the current overlay index from the URL query parameter
+    const params = new URLSearchParams(window.location.search);
+    const overlayParam = params.get('overlayIndex');
+    const paramOverlayIndex = overlayParam ? parseInt(overlayParam, 10) : 0;
+
+    this.currentOverlayIndex = paramOverlayIndex - 1;
+    this.gotoOverlay(paramOverlayIndex, false, false, false, false);
   }
 
   loadChapterData(scene: Phaser.Scene, chapter: MangaKunTypes.Chapter) {
@@ -109,6 +115,12 @@ export class MainController {
       if (updateOverlayIndex) {
         this.currentOverlayIndex = newOverlayIndex; // Update the current overlay index
         EventBus.emit('on-overlay-changed', newOverlayIndex);
+
+        // Update query param in URL without reloading the page
+        const params = new URLSearchParams(window.location.search);
+        params.set('overlayIndex', String(this.currentOverlayIndex));
+        const newUrl = `${window.location.pathname}?${params.toString()}`;
+        window.history.replaceState({}, '', newUrl);
       }
       this.isAnimationInProgress = false;
     });
