@@ -13,10 +13,10 @@ export class CustomTitleStrategy extends TitleStrategy {
     const title = this.buildTitle(routerState);
     if (title !== undefined) {
       // Our custom title pattern
-      this.title.setTitle(`${title} - MangaFlow`);
+      this.title.setTitle(`${title} - MangaKun`);
     } else {
       // Fallback if no route title is provided
-      this.title.setTitle('MangaFlow - Your Ultimate Manga Reader');
+      this.title.setTitle('MangaKun - Your Ultimate Manga Reader');
     }
   }
 }

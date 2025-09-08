@@ -6,7 +6,7 @@ import {MangaKunTypes} from '../app/types/all-types';
 const StartGame = (parent: string, chapterData: MangaKunTypes.Chapter) => {
   const config: Types.Core.GameConfig = {
     type: AUTO,
-    title: 'MangaFlow',
+    title: 'MangaKun',
     parent: parent,
     backgroundColor: '#000000',
     pixelArt: false, // TODO Check how this affects scaling
