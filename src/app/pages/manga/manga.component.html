@@ -16,7 +16,7 @@
             <p class="card-text">{{ manga.description }}</p>
             <hr>
             <div class="chapters mt-3">
-              @if (manga.volumes?.length) {
+              @if (manga.volumes.length) {
                 <!-- Volumes -->
                 @for (volume of manga.volumes; track volume.number) {
                   <div class="card mb-3 border-0">

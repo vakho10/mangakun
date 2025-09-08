@@ -3,5 +3,5 @@ export const environment = {
   appName: 'MangaKun (Dev)',
   version: '1.0.0',
   apiUrl: '',
-  debugging: true
+  debugMode: true
 };

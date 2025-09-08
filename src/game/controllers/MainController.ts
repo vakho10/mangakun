@@ -4,6 +4,7 @@ import {PageContainer} from '../gameobjects/PageContainer';
 import {Overlay} from '../gameobjects/Overlay';
 import {EventBus} from '../EventBus';
 import {AudioController} from './AudioController';
+import {environment} from '../../environments/environment';
 
 export class MainController {
 
@@ -72,7 +73,13 @@ export class MainController {
             px - pageImage.displayWidth / 2,
             py - pageImage.displayHeight / 2
           ]);
-          const overlay = new Overlay(this.scene, 0, 0, overlayPoints, this.randomColor(), .8);
+          let fillColor = 0x000000;
+          let fillAlpha = 0.9;
+          if (environment.debugMode) {
+            fillColor = this.randomColor();
+            fillAlpha = 0.75;
+          }
+          const overlay = new Overlay(this.scene, 0, 0, overlayPoints, fillColor, fillAlpha);
           pageContainer.add(overlay);
         });
 

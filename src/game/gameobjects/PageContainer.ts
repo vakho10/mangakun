@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import {Overlay} from './Overlay';
+import {environment} from '../../environments/environment';
 
 export class PageContainer extends Phaser.GameObjects.Container {
 
@@ -16,7 +17,9 @@ export class PageContainer extends Phaser.GameObjects.Container {
     const bounds = this.getBounds();
     this.setSize(bounds.width, bounds.height);
 
-    this.drawBorderAroundMe();
+    if (environment.debugMode) {
+      this.drawBorderAroundMe();
+    }
   }
 
   get page(): Phaser.GameObjects.Image {
