@@ -28,13 +28,13 @@ export class PhaserGame implements AfterViewInit, OnDestroy {
 
   private onResize = () => {
     if (this.game) {
-      // Try to change game (canvas) size
+      // Try to change the game (canvas) size
       this.game.scale.setGameSize(
         Math.floor(window.innerWidth),
         Math.floor(window.innerHeight)
       );
-      // Refocus on the same panel
-      EventBus.emit('focus-on-current-panel');
+      // Refocus on the same overlay
+      EventBus.emit('focus-on-current-overlay');
     }
   }
 

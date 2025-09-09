@@ -22,14 +22,14 @@ export class AudioController {
   // Add a property to track pending delayed calls
   private pendingDelayedCalls: Phaser.Time.TimerEvent[] = [];
 
-  private panelBgmMap: Map<number, MangaKunTypes.SoundEvent[]> = new Map();
+  private overlayBgmMap: Map<number, MangaKunTypes.SoundEvent[]> = new Map();
 
   playOverlaySounds(scene: Phaser.Scene, chapter: MangaKunTypes.Chapter, overlayIndex: number) {
-    let panel: MangaKunTypes.Overlay | undefined;
+    let overlay: MangaKunTypes.Overlay | undefined;
 
     let count = 0;
     for (const page of chapter.pages) {
-      const panels = page.overlays?.length ? page.overlays
+      const overlays = page.overlays?.length ? page.overlays
         : [
           {
             coordinates: [
@@ -38,38 +38,38 @@ export class AudioController {
             ]
           } as MangaKunTypes.Overlay
         ];
-      for (const p of panels) {
+      for (const p of overlays) {
         if (count === overlayIndex) {
-          panel = p;
+          overlay = p;
           break;
         }
         count++;
       }
-      if (panel) break;
+      if (overlay) break;
     }
 
     // (1) Cancel any pending delayed calls
     this.pendingDelayedCalls.forEach(call => call.destroy());
     this.pendingDelayedCalls = [];
 
-    // (2) Save panel's BGM for restoration when navigating back
-    if (panel?.events?.bgm?.length) {
-      this.panelBgmMap.set(overlayIndex, panel.events.bgm);
+    // (2) Save overlay's BGM for restoration when navigating back
+    if (overlay?.events?.bgm?.length) {
+      this.overlayBgmMap.set(overlayIndex, overlay.events.bgm);
     }
 
     // (3) Determine which BGM events to play
-    // If the panel has no BGM, check if we have saved BGM for this panel (for backward navigation)
-    const bgmEvents = panel?.events?.bgm ?? this.panelBgmMap.get(overlayIndex) ?? [];
+    // If the overlay has no BGM, check if we have saved BGM for this overlay (for backward navigation)
+    const bgmEvents = overlay?.events?.bgm ?? this.overlayBgmMap.get(overlayIndex) ?? [];
 
     // (4) Stop layers that are no longer active
     this.stopMissingLayers(scene, "bgm", new Set(bgmEvents.map(ev => `bgm-${ev.src}`)), bgmEvents);
-    this.stopMissingLayers(scene, "sfx", new Set(panel?.events?.sfx?.map(ev => `sfx-${ev.src}`) ?? []), panel?.events?.sfx ?? []);
-    this.stopMissingLayers(scene, "tts", new Set(panel?.events?.tts?.map(ev => `tts-${ev.src}`) ?? []), panel?.events?.tts ?? []);
+    this.stopMissingLayers(scene, "sfx", new Set(overlay?.events?.sfx?.map(ev => `sfx-${ev.src}`) ?? []), overlay?.events?.sfx ?? []);
+    this.stopMissingLayers(scene, "tts", new Set(overlay?.events?.tts?.map(ev => `tts-${ev.src}`) ?? []), overlay?.events?.tts ?? []);
 
-    // (5) Play panel sounds
+    // (5) Play overlay sounds
     this.playLayeredSounds(scene, "bgm", bgmEvents);
-    this.playLayeredSounds(scene, "sfx", panel?.events?.sfx ?? []);
-    this.playLayeredSounds(scene, "tts", panel?.events?.tts ?? []);
+    this.playLayeredSounds(scene, "sfx", overlay?.events?.sfx ?? []);
+    this.playLayeredSounds(scene, "tts", overlay?.events?.tts ?? []);
   }
 
   private getFadeDurations(ev: MangaKunTypes.SoundEvent, type: "bgm" | "sfx" | "tts") {
@@ -176,7 +176,7 @@ export class AudioController {
       this.pendingDelayedCalls.push(delayedCall);
     });
 
-    // Stop layers missing in the new panel
+    // Stop layers missing in the new overlay
     this.stopMissingLayers(scene, type, newKeys, events);
 
     if (type === 'bgm') this.activeBgmKeys = newKeys;

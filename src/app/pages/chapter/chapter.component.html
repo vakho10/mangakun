@@ -13,29 +13,29 @@
              role="group" aria-label="Basic example">
           <!-- [First] -->
           <button type="button" class="btn btn-primary"
-                  (click)="gotoFirstPanel()"
-                  [class.disabled]="panelNum == 1">
+                  (click)="gotoFirstOverlay()"
+                  [class.disabled]="overlayNumber == 1">
             First
           </button>
           <!-- [Prev] -->
           <button type="button" class="btn btn-primary"
-                  (click)="gotoPrevPanel()"
-                  [class.disabled]="panelNum == 1">
+                  (click)="gotoPrevOverlay()"
+                  [class.disabled]="overlayNumber == 1">
             Prev
           </button>
           <button type="button" class="btn btn-primary disabled">
-            C: {{ chapterData.number }}, P: {{ panelNum }}
+            C: {{ chapterData.number }}, P: {{ overlayNumber }}
           </button>
           <!-- [Next] -->
           <button type="button" class="btn btn-primary"
-                  (click)="gotoNextPanel()"
-                  [class.disabled]="panelNum == chapterData.pages.length">
+                  (click)="gotoNextOverlay()"
+                  [class.disabled]="overlayNumber == chapterData.pages.length">
             Next
           </button>
           <!-- [Last] -->
           <button type="button" class="btn btn-primary"
-                  (click)="gotoLastPanel()"
-                  [class.disabled]="panelNum == chapterData.pages.length">
+                  (click)="gotoLastOverlay()"
+                  [class.disabled]="overlayNumber == chapterData.pages.length">
             Last
           </button>
         </div>

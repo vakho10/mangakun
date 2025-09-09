@@ -77,21 +77,21 @@ export class PreloaderScene extends Scene {
       // Save id for image as its path
       this.load.image(page.imagePath, page.imagePath);
 
-      // Load panel data (if available)
+      // Load overlay data (if available)
       if (page.overlays) {
-        page.overlays.forEach((panel) => {
-          if (panel.events) {
+        page.overlays.forEach((overlay) => {
+          if (overlay.events) {
             // Load bgm
-            if (panel.events.bgm) {
-              panel.events.bgm.forEach((bgm) => this.saveLoadAudio("bgm", bgm.src));
+            if (overlay.events.bgm) {
+              overlay.events.bgm.forEach((bgm) => this.saveLoadAudio("bgm", bgm.src));
             }
             // Load sfx
-            if (panel.events.sfx) {
-              panel.events.sfx.forEach((sfx) => this.saveLoadAudio("sfx", sfx.src));
+            if (overlay.events.sfx) {
+              overlay.events.sfx.forEach((sfx) => this.saveLoadAudio("sfx", sfx.src));
             }
             // Load tts
-            if (panel.events.tts) {
-              panel.events.tts.forEach((tts) => this.saveLoadAudio("tts", tts.src));
+            if (overlay.events.tts) {
+              overlay.events.tts.forEach((tts) => this.saveLoadAudio("tts", tts.src));
             }
           }
         });

@@ -17,12 +17,12 @@ export class ChapterScene extends Phaser.Scene {
   init() {
     this.chapter = this.game.registry.get('chapterData');
 
-    EventBus.on('goto-first-panel', () => this.mainController.gotoFirstOverlay());
-    EventBus.on('goto-prev-panel', () => this.mainController.gotoPreviousOverlay());
-    EventBus.on('goto-next-panel', () => this.mainController.gotoNextOverlay());
-    EventBus.on('goto-last-panel', () => this.mainController.gotoLastOverlay());
-    EventBus.on('focus-on-current-panel', () => {
-      // Just focus on the current panel without no extra actions
+    EventBus.on('goto-first-overlay', () => this.mainController.gotoFirstOverlay());
+    EventBus.on('goto-prev-overlay', () => this.mainController.gotoPreviousOverlay());
+    EventBus.on('goto-next-overlay', () => this.mainController.gotoNextOverlay());
+    EventBus.on('goto-last-overlay', () => this.mainController.gotoLastOverlay());
+    EventBus.on('focus-on-current-overlay', () => {
+      // Just focus on the current overlay without no extra actions
       this.mainController.gotoOverlay(this.mainController.currentOverlayIndex == -1 ? 0
         : this.mainController.currentOverlayIndex, false, false, false, false);
     });
@@ -56,9 +56,7 @@ export class ChapterScene extends Phaser.Scene {
       else if (pointer.rightButtonReleased()) this.mainController.gotoPreviousOverlay();
     });
 
-    // Focus camera on the first panel
-    this.mainController.init();
-
+    this.mainController.init(); // Focus camera on the first overlay
     EventBus.emit('chapter-loaded'); // Notify angular components that the chapter is loaded
   }
 

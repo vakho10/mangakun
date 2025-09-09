@@ -20,7 +20,7 @@ export class ChapterComponent implements AfterViewInit {
   private readonly route = inject(ActivatedRoute);
   private readonly mangaService = inject(MangaService);
 
-  panelNum = 1;
+  overlayNumber = 1;
   chapterLoaded = false;
 
   @ViewChild('container', {read: ViewContainerRef}) container!: ViewContainerRef;
@@ -43,23 +43,23 @@ export class ChapterComponent implements AfterViewInit {
       componentRef.instance.chapterData = chapterData!;
 
       EventBus.on('chapter-loaded', () => this.chapterLoaded = true);
-      EventBus.on('on-overlay-changed', (currentPanelIndex: number) => this.panelNum = currentPanelIndex + 1);
+      EventBus.on('on-overlay-changed', (currentOverlayIndex: number) => this.overlayNumber = currentOverlayIndex + 1);
     });
   }
 
-  gotoFirstPanel() {
-    EventBus.emit('goto-first-panel');
+  gotoFirstOverlay() {
+    EventBus.emit('goto-first-overlay');
   }
 
-  gotoPrevPanel() {
-    EventBus.emit('goto-prev-panel');
+  gotoPrevOverlay() {
+    EventBus.emit('goto-prev-overlay');
   }
 
-  gotoNextPanel() {
-    EventBus.emit('goto-next-panel');
+  gotoNextOverlay() {
+    EventBus.emit('goto-next-overlay');
   }
 
-  gotoLastPanel() {
-    EventBus.emit('goto-last-panel');
+  gotoLastOverlay() {
+    EventBus.emit('goto-last-overlay');
   }
 }
