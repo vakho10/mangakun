@@ -78,7 +78,7 @@ export class Overlay extends Phaser.GameObjects.Polygon {
     }
   }
 
-  private pan$(camera: Phaser.Cameras.Scene2D.Camera, x: number, y: number, duration: number): Observable<void> {
+  pan$(camera: Phaser.Cameras.Scene2D.Camera, x: number, y: number, duration: number): Observable<void> {
     return new Observable<void>((observer) => {
       camera.pan(x, y, duration, 'Power2', false, (_cam, progress) => {
         if (progress === 1) {
@@ -89,7 +89,7 @@ export class Overlay extends Phaser.GameObjects.Polygon {
     });
   }
 
-  private zoom$(camera: Phaser.Cameras.Scene2D.Camera, zoom: number, duration: number): Observable<void> {
+  zoom$(camera: Phaser.Cameras.Scene2D.Camera, zoom: number, duration: number): Observable<void> {
     return new Observable<void>((observer) => {
       camera.zoomTo(zoom, duration, 'Power2', false, (_cam, progress) => {
         if (progress === 1) {

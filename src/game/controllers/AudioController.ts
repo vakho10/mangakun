@@ -3,6 +3,8 @@ import Phaser from 'phaser';
 
 export class AudioController {
 
+  private scene: Phaser.Scene;
+
   // Scene-level fade defaults
   // TODO move to a config file?!
   private fadeDefaults = {
@@ -24,7 +26,11 @@ export class AudioController {
 
   private overlayBgmMap: Map<number, MangaKunTypes.SoundEvent[]> = new Map();
 
-  playOverlaySounds(scene: Phaser.Scene, chapter: MangaKunTypes.Chapter, overlayIndex: number) {
+  constructor(scene: Phaser.Scene) {
+    this.scene = scene;
+  }
+
+  playOverlaySounds(chapter: MangaKunTypes.Chapter, overlayIndex: number) {
     let overlay: MangaKunTypes.Overlay | undefined;
 
     let count = 0;
@@ -62,14 +68,14 @@ export class AudioController {
     const bgmEvents = overlay?.events?.bgm ?? this.overlayBgmMap.get(overlayIndex) ?? [];
 
     // (4) Stop layers that are no longer active
-    this.stopMissingLayers(scene, "bgm", new Set(bgmEvents.map(ev => `bgm-${ev.src}`)), bgmEvents);
-    this.stopMissingLayers(scene, "sfx", new Set(overlay?.events?.sfx?.map(ev => `sfx-${ev.src}`) ?? []), overlay?.events?.sfx ?? []);
-    this.stopMissingLayers(scene, "tts", new Set(overlay?.events?.tts?.map(ev => `tts-${ev.src}`) ?? []), overlay?.events?.tts ?? []);
+    this.stopMissingLayers("bgm", new Set(bgmEvents.map(ev => `bgm-${ev.src}`)), bgmEvents);
+    this.stopMissingLayers("sfx", new Set(overlay?.events?.sfx?.map(ev => `sfx-${ev.src}`) ?? []), overlay?.events?.sfx ?? []);
+    this.stopMissingLayers("tts", new Set(overlay?.events?.tts?.map(ev => `tts-${ev.src}`) ?? []), overlay?.events?.tts ?? []);
 
     // (5) Play overlay sounds
-    this.playLayeredSounds(scene, "bgm", bgmEvents);
-    this.playLayeredSounds(scene, "sfx", overlay?.events?.sfx ?? []);
-    this.playLayeredSounds(scene, "tts", overlay?.events?.tts ?? []);
+    this.playLayeredSounds("bgm", bgmEvents);
+    this.playLayeredSounds("sfx", overlay?.events?.sfx ?? []);
+    this.playLayeredSounds("tts", overlay?.events?.tts ?? []);
   }
 
   private getFadeDurations(ev: MangaKunTypes.SoundEvent, type: "bgm" | "sfx" | "tts") {
@@ -79,8 +85,8 @@ export class AudioController {
     };
   }
 
-  private fadeOutAndStop(scene: Phaser.Scene, sound: Phaser.Sound.BaseSound, duration: number) {
-    scene.tweens.add({
+  private fadeOutAndStop(sound: Phaser.Sound.BaseSound, duration: number) {
+    this.scene.tweens.add({
       targets: sound,
       volume: 0,
       duration,
@@ -89,7 +95,7 @@ export class AudioController {
     });
   }
 
-  private stopMissingLayers(scene: Phaser.Scene, type: "bgm" | "sfx" | "tts", keepKeys: Set<string>, events: MangaKunTypes.SoundEvent[] = []) {
+  private stopMissingLayers(type: "bgm" | "sfx" | "tts", keepKeys: Set<string>, events: MangaKunTypes.SoundEvent[] = []) {
     const map = type === "bgm" ? this.bgmMap : type === "sfx" ? this.sfxMap : this.ttsMap;
     const activeKeys = type === "bgm" ? this.activeBgmKeys : type === "sfx" ? this.activeSfxKeys : this.activeTtsKeys;
 
@@ -104,14 +110,14 @@ export class AudioController {
         const prev = map.get(prevKey);
         if (prev) {
           const fadeDur = fadeLookup[prevKey] ?? this.fadeDefaults[type].fadeOut;
-          this.fadeOutAndStop(scene, prev, fadeDur);
+          this.fadeOutAndStop(prev, fadeDur);
           map.delete(prevKey);
         }
       }
     });
   }
 
-  private playLayeredSounds(scene: Phaser.Scene, type: 'bgm' | 'sfx' | 'tts', events: MangaKunTypes.SoundEvent[]) {
+  private playLayeredSounds(type: 'bgm' | 'sfx' | 'tts', events: MangaKunTypes.SoundEvent[]) {
     const map = type === "bgm" ? this.bgmMap : type === "sfx" ? this.sfxMap : this.ttsMap;
     const activeKeys = type === "bgm" ? this.activeBgmKeys : type === "sfx" ? this.activeSfxKeys : this.activeTtsKeys;
 
@@ -133,7 +139,7 @@ export class AudioController {
 
           // Smoothly transition to a new volume level if it changed
           if (currentVolume !== targetVolume) {
-            scene.tweens.add({
+            this.scene.tweens.add({
               targets: webSound,
               volume: targetVolume,
               duration: fadeIn,
@@ -148,25 +154,25 @@ export class AudioController {
         // SFX/TTS: restart if requested
         if ((type === "sfx" || type === "tts") && !ev.restart) return;
         if (ev.restart) {
-          this.fadeOutAndStop(scene, existing!, fadeOut);
+          this.fadeOutAndStop(existing!, fadeOut);
           map.delete(key);
         }
       }
 
       // Create new sound if not active or forced restart
-      const sound = scene.sound.add(key, {
+      const sound = this.scene.sound.add(key, {
         loop: ev.loop ?? (type === "bgm"),
         volume: 0
       });
       map.set(key, sound);
 
-      const delayedCall = scene.time.delayedCall(ev.delay ?? 0, () => {
+      const delayedCall = this.scene.time.delayedCall(ev.delay ?? 0, () => {
         sound.play();
-        scene.tweens.add({targets: sound, volume: targetVolume, duration: fadeIn, ease: 'Linear'});
+        this.scene.tweens.add({targets: sound, volume: targetVolume, duration: fadeIn, ease: 'Linear'});
 
         if (ev.duration) {
-          const stopCall = scene.time.delayedCall(ev.duration, () => {
-            this.fadeOutAndStop(scene, sound, fadeOut);
+          const stopCall = this.scene.time.delayedCall(ev.duration, () => {
+            this.fadeOutAndStop(sound, fadeOut);
             map.delete(key);
           });
           this.pendingDelayedCalls.push(stopCall);
@@ -177,7 +183,7 @@ export class AudioController {
     });
 
     // Stop layers missing in the new overlay
-    this.stopMissingLayers(scene, type, newKeys, events);
+    this.stopMissingLayers(type, newKeys, events);
 
     if (type === 'bgm') this.activeBgmKeys = newKeys;
     if (type === 'sfx') this.activeSfxKeys = newKeys;

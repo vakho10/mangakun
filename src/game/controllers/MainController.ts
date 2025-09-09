@@ -5,12 +5,15 @@ import {Overlay} from '../gameobjects/Overlay';
 import {EventBus} from '../EventBus';
 import {AudioController} from './AudioController';
 import {environment} from '../../environments/environment';
+import {CinematicCameraController} from './CinematicCameraController';
 
 export class MainController {
 
   private scene!: Phaser.Scene;
   private chapter!: MangaKunTypes.Chapter;
-  private audioController: AudioController = new AudioController();
+
+  private audioController!: AudioController;
+  private cameraController!: CinematicCameraController;
 
   pageContainers: Phaser.GameObjects.Container[] = [];
   overlays: Overlay[] = [];
@@ -20,7 +23,10 @@ export class MainController {
 
   isAnimationInProgress = false;
 
-  init() {
+  init(scene: Phaser.Scene) {
+    this.audioController = new AudioController(scene);
+    this.cameraController = new CinematicCameraController(scene);
+
     // Get the current overlay index from the URL query parameter
     const params = new URLSearchParams(window.location.search);
     const overlayParam = params.get('overlayIndex');
@@ -100,23 +106,23 @@ export class MainController {
     console.log('Overlays: ', this.overlays);
   }
 
-  gotoOverlay(overlayIndex: number, animate: boolean, hideAfter: boolean, playAudio: boolean = true, updateOverlayIndex = true) {
+  gotoOverlay(overlayIndex: number, animate: boolean, hideAfter: boolean, playAudio: boolean = true, updateOverlayIndex = true,
+              shakeCamera = true) {
     const newOverlayIndex = overlayIndex;
     if (this.overlays.length <= newOverlayIndex || newOverlayIndex < 0) {
       return;
     }
-    if (this.isAnimationInProgress) return;
-    this.isAnimationInProgress = true;
     console.log('Goto overlay: ', overlayIndex);
-    this.overlays[newOverlayIndex].focusOn(animate, hideAfter, () => {
+
+    this.cameraController.focusOnOverlay(this.overlays[newOverlayIndex], animate, hideAfter, shakeCamera, () => {
       if (playAudio) {
-        this.audioController.playOverlaySounds(this.scene, this.chapter, newOverlayIndex);
+        this.audioController.playOverlaySounds(this.chapter, newOverlayIndex);
       }
       if (updateOverlayIndex) {
         this.currentOverlayIndex = newOverlayIndex; // Update the current overlay index
         EventBus.emit('on-overlay-changed', newOverlayIndex);
 
-        // Update query param in URL without reloading the page
+        // Update query param
         const params = new URLSearchParams(window.location.search);
         params.set('overlayIndex', String(this.currentOverlayIndex));
         const newUrl = `${window.location.pathname}?${params.toString()}`;

@@ -3,7 +3,6 @@ import {EventBus} from '../EventBus';
 import {MangaKunTypes} from '../../app/types/all-types';
 import {MainController} from '../controllers/MainController';
 
-
 export class ChapterScene extends Phaser.Scene {
   private chapter!: MangaKunTypes.Chapter;
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -56,7 +55,7 @@ export class ChapterScene extends Phaser.Scene {
       else if (pointer.rightButtonReleased()) this.mainController.gotoPreviousOverlay();
     });
 
-    this.mainController.init(); // Focus camera on the first overlay
+    this.mainController.init(this); // Focus camera on the first overlay
     EventBus.emit('chapter-loaded'); // Notify angular components that the chapter is loaded
   }
 
