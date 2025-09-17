@@ -102,8 +102,6 @@ export class MainController {
 
     // Store overlay here for easy access
     this.overlays = this.pageContainers.flatMap(pc => (pc as PageContainer).overlays);
-
-    console.log('Overlays: ', this.overlays);
   }
 
   gotoOverlay(overlayIndex: number, animate: boolean, hideAfter: boolean, playAudio: boolean = true, updateOverlayIndex = true,
@@ -112,7 +110,6 @@ export class MainController {
     if (this.overlays.length <= newOverlayIndex || newOverlayIndex < 0) {
       return;
     }
-    console.log('Goto overlay: ', overlayIndex);
 
     this.cameraController.focusOnOverlay(this.overlays[newOverlayIndex], animate, hideAfter, shakeCamera, () => {
       if (playAudio) {
