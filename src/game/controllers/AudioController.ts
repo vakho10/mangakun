@@ -31,28 +31,7 @@ export class AudioController {
   }
 
   playOverlaySounds(chapter: MangaKunTypes.Chapter, overlayIndex: number) {
-    let overlay: MangaKunTypes.Overlay | undefined;
-
-    let count = 0;
-    for (const page of chapter.pages) {
-      const overlays = page.overlays?.length ? page.overlays
-        : [
-          {
-            coordinates: [
-              [0, 0], [page.imagePath.length, 0],
-              [page.imagePath.length, page.imagePath.length], [0, page.imagePath.length]
-            ]
-          } as MangaKunTypes.Overlay
-        ];
-      for (const p of overlays) {
-        if (count === overlayIndex) {
-          overlay = p;
-          break;
-        }
-        count++;
-      }
-      if (overlay) break;
-    }
+    const overlay = this.findOverlay(chapter, overlayIndex);
 
     // (1) Cancel any pending delayed calls
     this.pendingDelayedCalls.forEach(call => call.destroy());
@@ -64,18 +43,42 @@ export class AudioController {
     }
 
     // (3) Determine which BGM events to play
-    // If the overlay has no BGM, check if we have saved BGM for this overlay (for backward navigation)
-    const bgmEvents = overlay?.events?.bgm ?? this.overlayBgmMap.get(overlayIndex) ?? [];
+    // If the overlay has no BGM, find the most recent overlay that had BGM
+    const bgmEvents = overlay?.events?.bgm ?? this.findNearestBgm(overlayIndex) ?? [];
+
+    const sfxEvents = overlay?.events?.sfx ?? [];
+    const ttsEvents = overlay?.events?.tts ?? [];
 
     // (4) Stop layers that are no longer active
     this.stopMissingLayers("bgm", new Set(bgmEvents.map(ev => `bgm-${ev.src}`)), bgmEvents);
-    this.stopMissingLayers("sfx", new Set(overlay?.events?.sfx?.map(ev => `sfx-${ev.src}`) ?? []), overlay?.events?.sfx ?? []);
-    this.stopMissingLayers("tts", new Set(overlay?.events?.tts?.map(ev => `tts-${ev.src}`) ?? []), overlay?.events?.tts ?? []);
+    this.stopMissingLayers("sfx", new Set(sfxEvents.map(ev => `sfx-${ev.src}`)), sfxEvents);
+    this.stopMissingLayers("tts", new Set(ttsEvents.map(ev => `tts-${ev.src}`)), ttsEvents);
 
     // (5) Play overlay sounds
     this.playLayeredSounds("bgm", bgmEvents);
-    this.playLayeredSounds("sfx", overlay?.events?.sfx ?? []);
-    this.playLayeredSounds("tts", overlay?.events?.tts ?? []);
+    this.playLayeredSounds("sfx", sfxEvents);
+    this.playLayeredSounds("tts", ttsEvents);
+  }
+
+  private findOverlay(chapter: MangaKunTypes.Chapter, overlayIndex: number): MangaKunTypes.Overlay | undefined {
+    let count = 0;
+    for (const page of chapter.pages) {
+      const overlays = page.overlays?.length ? page.overlays : [{}];
+      for (const overlay of overlays) {
+        if (count === overlayIndex) return overlay;
+        count++;
+      }
+    }
+    return undefined;
+  }
+
+  private findNearestBgm(overlayIndex: number): MangaKunTypes.SoundEvent[] | undefined {
+    // Walk backward to find the most recent overlay that had BGM
+    for (let i = overlayIndex; i >= 0; i--) {
+      const bgm = this.overlayBgmMap.get(i);
+      if (bgm) return bgm;
+    }
+    return undefined;
   }
 
   private getFadeDurations(ev: MangaKunTypes.SoundEvent, type: "bgm" | "sfx" | "tts") {
@@ -113,6 +116,7 @@ export class AudioController {
           this.fadeOutAndStop(prev, fadeDur);
           map.delete(prevKey);
         }
+        activeKeys.delete(prevKey);
       }
     });
   }
@@ -121,15 +125,12 @@ export class AudioController {
     const map = type === "bgm" ? this.bgmMap : type === "sfx" ? this.sfxMap : this.ttsMap;
     const activeKeys = type === "bgm" ? this.activeBgmKeys : type === "sfx" ? this.activeSfxKeys : this.activeTtsKeys;
 
-    const newKeys = new Set<string>();
-
     events.forEach((ev) => {
       const {fadeIn, fadeOut} = this.getFadeDurations(ev, type);
       const key = `${type}-${ev.src}`;
-      newKeys.add(key);
+      const targetVolume = ev.volume ?? 1;
 
       const alreadyActive = activeKeys.has(key);
-      const targetVolume = ev.volume ?? 1;
 
       if (alreadyActive) {
         const existing = map.get(key);
@@ -146,20 +147,22 @@ export class AudioController {
               ease: 'Linear'
             });
           }
-        }
 
-        // BGM should keep playing if already active
-        if (type === "bgm") return;
+          // BGM should keep playing if already active
+          if (type === "bgm") return;
 
-        // SFX/TTS: restart if requested
-        if ((type === "sfx" || type === "tts") && !ev.restart) return;
-        if (ev.restart) {
-          this.fadeOutAndStop(existing!, fadeOut);
+          // SFX/TTS: keep playing unless restart is requested
+          if (!ev.restart) return;
+
+          // Restart requested — fade out existing before creating new
+          this.fadeOutAndStop(existing, fadeOut);
           map.delete(key);
         }
       }
 
-      // Create new sound if not active or forced restart
+      activeKeys.add(key);
+
+      // Create new sound
       const sound = this.scene.sound.add(key, {
         loop: ev.loop ?? (type === "bgm"),
         volume: 0
@@ -174,6 +177,7 @@ export class AudioController {
           const stopCall = this.scene.time.delayedCall(ev.duration, () => {
             this.fadeOutAndStop(sound, fadeOut);
             map.delete(key);
+            activeKeys.delete(key);
           });
           this.pendingDelayedCalls.push(stopCall);
         }
@@ -181,12 +185,5 @@ export class AudioController {
 
       this.pendingDelayedCalls.push(delayedCall);
     });
-
-    // Stop layers missing in the new overlay
-    this.stopMissingLayers(type, newKeys, events);
-
-    if (type === 'bgm') this.activeBgmKeys = newKeys;
-    if (type === 'sfx') this.activeSfxKeys = newKeys;
-    if (type === 'tts') this.activeTtsKeys = newKeys;
   }
 }

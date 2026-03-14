@@ -8,8 +8,6 @@ export class CinematicCameraController {
   private cam: Phaser.Cameras.Scene2D.Camera;
 
   private driftHandler?: (time: number, delta: number) => void;
-  private isAnimating = false;
-
   private driftXNoise = new SimpleNoise();
   private driftYNoise = new SimpleNoise();
 
@@ -32,9 +30,6 @@ export class CinematicCameraController {
     shakeCamera: boolean = true,
     onComplete?: () => void
   ) {
-    if (this.isAnimating) return;
-    this.isAnimating = true;
-
     this.stopDrift();
 
     const camera = this.scene.cameras.main;
@@ -49,7 +44,6 @@ export class CinematicCameraController {
       if (shakeCamera) {
         this.startDrift(center.x - this.cam.width / 2, center.y - this.cam.height / 2, zoom);
       }
-      this.isAnimating = false;
       onComplete?.();
     };
 
@@ -60,7 +54,7 @@ export class CinematicCameraController {
       ]).subscribe(() => {
         if (overlay.visible && hideAfter) {
           this.scene.tweens.add({
-            targets: this,
+            targets: overlay,
             alpha: 0,
             duration: 250,
             ease: 'Sine.easeInOut',

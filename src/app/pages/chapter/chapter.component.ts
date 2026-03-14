@@ -1,5 +1,6 @@
-import {AfterViewInit, Component, inject, ViewChild, ViewContainerRef} from '@angular/core';
+import {AfterViewInit, Component, inject, OnDestroy, ViewChild, ViewContainerRef} from '@angular/core';
 import {ActivatedRoute, RouterLink} from '@angular/router';
+import {Subscription} from 'rxjs';
 import {switchMap} from 'rxjs/operators';
 import {MangaService} from '../../services/manga.service';
 import {PhaserGame} from '../../phaser-game.component';
@@ -16,9 +17,10 @@ import {AsyncPipe} from '@angular/common';
   templateUrl: './chapter.component.html',
   styleUrl: './chapter.component.scss'
 })
-export class ChapterComponent implements AfterViewInit {
+export class ChapterComponent implements AfterViewInit, OnDestroy {
   private readonly route = inject(ActivatedRoute);
   private readonly mangaService = inject(MangaService);
+  private chapterSub?: Subscription;
 
   overlayNumber = 1;
   chapterLoaded = false;
@@ -35,16 +37,36 @@ export class ChapterComponent implements AfterViewInit {
   );
 
   ngAfterViewInit(): void {
-    this.chapter$.subscribe(chapterData => {
+    this.onChapterLoaded = this.onChapterLoaded.bind(this);
+    this.onOverlayChanged = this.onOverlayChanged.bind(this);
+
+    EventBus.on('chapter-loaded', this.onChapterLoaded);
+    EventBus.on('on-overlay-changed', this.onOverlayChanged);
+
+    this.chapterSub = this.chapter$.subscribe(chapterData => {
+      // Clear previous game instance if route params changed
+      this.container.clear();
+
       // Create a child game component reference
       const componentRef = this.container.createComponent(PhaserGame);
 
       // Pass the chapter data to the game component
       componentRef.instance.chapterData = chapterData!;
-
-      EventBus.on('chapter-loaded', () => this.chapterLoaded = true);
-      EventBus.on('on-overlay-changed', (currentOverlayIndex: number) => this.overlayNumber = currentOverlayIndex + 1);
     });
+  }
+
+  ngOnDestroy(): void {
+    this.chapterSub?.unsubscribe();
+    EventBus.off('chapter-loaded', this.onChapterLoaded);
+    EventBus.off('on-overlay-changed', this.onOverlayChanged);
+  }
+
+  private onChapterLoaded() {
+    this.chapterLoaded = true;
+  }
+
+  private onOverlayChanged(currentOverlayIndex: number) {
+    this.overlayNumber = currentOverlayIndex + 1;
   }
 
   gotoFirstOverlay() {

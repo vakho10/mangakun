@@ -100,8 +100,9 @@ export class PreloaderScene extends Scene {
   }
 
   saveLoadAudio(type: "bgm" | "sfx" | "tts", src: string) {
-    if (!this.cache.audio.exists(src)) {
-      this.load.audio(`${type}-${src}`, src);
+    const key = `${type}-${src}`;
+    if (!this.cache.audio.exists(key)) {
+      this.load.audio(key, src);
     }
   }
 

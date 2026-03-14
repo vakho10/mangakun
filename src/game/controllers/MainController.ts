@@ -106,18 +106,18 @@ export class MainController {
 
   gotoOverlay(overlayIndex: number, animate: boolean, hideAfter: boolean, playAudio: boolean = true, updateOverlayIndex = true,
               shakeCamera = true) {
-    const newOverlayIndex = overlayIndex;
-    if (this.overlays.length <= newOverlayIndex || newOverlayIndex < 0) {
-      return;
-    }
+    if (this.isAnimationInProgress) return;
+    if (overlayIndex < 0 || overlayIndex >= this.overlays.length) return;
 
-    this.cameraController.focusOnOverlay(this.overlays[newOverlayIndex], animate, hideAfter, shakeCamera, () => {
+    if (animate) this.isAnimationInProgress = true;
+
+    this.cameraController.focusOnOverlay(this.overlays[overlayIndex], animate, hideAfter, shakeCamera, () => {
       if (playAudio) {
-        this.audioController.playOverlaySounds(this.chapter, newOverlayIndex);
+        this.audioController.playOverlaySounds(this.chapter, overlayIndex);
       }
       if (updateOverlayIndex) {
-        this.currentOverlayIndex = newOverlayIndex; // Update the current overlay index
-        EventBus.emit('on-overlay-changed', newOverlayIndex);
+        this.currentOverlayIndex = overlayIndex;
+        EventBus.emit('on-overlay-changed', overlayIndex);
 
         // Update query param
         const params = new URLSearchParams(window.location.search);

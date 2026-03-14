@@ -12,7 +12,6 @@ export class Overlay extends Phaser.GameObjects.Polygon {
     fillAlpha: number = .5
   ) {
     super(scene, x, y, points, fillColor, fillAlpha);
-    this.scene.add.existing(this);
     this.setOrigin(0, 0);
   }
 

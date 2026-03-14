@@ -16,12 +16,15 @@ export class ChapterScene extends Phaser.Scene {
   init() {
     this.chapter = this.game.registry.get('chapterData');
 
+    // Clean up any previous listeners to prevent stacking on scene restart
+    EventBus.removeAllListeners();
+
     EventBus.on('goto-first-overlay', () => this.mainController.gotoFirstOverlay());
     EventBus.on('goto-prev-overlay', () => this.mainController.gotoPreviousOverlay());
     EventBus.on('goto-next-overlay', () => this.mainController.gotoNextOverlay());
     EventBus.on('goto-last-overlay', () => this.mainController.gotoLastOverlay());
     EventBus.on('focus-on-current-overlay', () => {
-      // Just focus on the current overlay without no extra actions
+      // Just focus on the current overlay without extra actions
       this.mainController.gotoOverlay(this.mainController.currentOverlayIndex == -1 ? 0
         : this.mainController.currentOverlayIndex, false, false, false, false);
     });
